@@ -115,7 +115,7 @@ export const TopSlider = () => {
   return (
     <div className="w-full">
       <div>
-      <div className="w-[97%] mx-auto mt-5">
+      <div className="w-[97%] mx-auto mt-32">
             <h1 className="text-2xl font-bold">Best In Beauty</h1>
             <p className="text-lg font-semibold text-gray-600">
             Today’s Top Offers
@@ -591,7 +591,7 @@ export const EditorC=()=>{
 
   return(
     <div className="w-full">
-      <div className="w-[95%] mx-auto mt-8">
+      <div className="w-[95%] mx-auto mt-8 mb-10">
         <div>
         <h1 className="text-2xl font-bold">Editor’s Choice</h1>
             <p className="text-lg font-semibold text-gray-600">
