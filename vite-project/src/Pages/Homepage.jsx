@@ -1,23 +1,12 @@
-import React from "react";
-import {
-  Featured,
-  Focus,
-  Gamezone,
-  OnlyatNaykaa,
-  Popupstores,
-  TopBrand,
-} from "../Components/TopBrand";
+
+   
+import React from 'react'
+import '../App.css'
+import { BrandSlider, EditorC, Essential, FabSec, TopSlider } from '../Components/Slider'
 
 const Homepage = () => {
   return (
-    <div className="text-7xl">
-      {/* Homepage */}
-      <TopBrand />
-      <OnlyatNaykaa />
-      <Featured />
-      <Focus />
-      <Gamezone />
-      <Popupstores />
+    <div>
     </div>
   );
 };
