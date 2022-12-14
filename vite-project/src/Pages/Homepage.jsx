@@ -1,9 +1,15 @@
 import React from 'react'
+import '../App.css'
+import { BrandSlider, EditorC, Essential, FabSec, TopSlider } from '../Components/Slider'
 
 const Homepage = () => {
   return (
-    <div className='text-7xl'>
-      Homepage
+    <div>
+      <TopSlider/>
+      <FabSec/>
+      <Essential/>
+      <BrandSlider/>
+      <EditorC/>
     </div>
   )
 }
