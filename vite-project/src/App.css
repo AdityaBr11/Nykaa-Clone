@@ -1,9 +1,95 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+}
+
+.d {
+	float: right;
+	overflow: hidden;
+    
+}
+.d .d-btn {
+	font-size: 16px;
+	border: none;
+	outline: none;
+	color: black;
+	padding: 14px 16px;
+	background: inherit;
+
+}
+.navbar a:hover, .d:hover .d-btn {
+	background: none;
+    color: rgb(255,143,186);
+}
+.d-content {
+	display: none;
+	position: absolute;
+	background: white;
+	width: 50%;
+
+	left: -0.5;
+    /*right: 10;*/
+    margin:  auto;
+	z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 0 0 5px 5px;
+  
+}
+
+.b-content {
+	display: none;
+	position: absolute;
+	background: white;
+	width: 60%;
+	/*left: 1;*/
+    right: 10;
+    margin: auto;
+	z-index: 10;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    border-radius: 0 0 5px 5px;
+  
+}
+.d:hover .d-content {
+	display: flex;
+}
+.column {
+	float: left;
+    display: block;
+	width: auto;
+	padding: 10px;
+    border: "1px solid red"
+	
+}
+.column a {
+	display: flex;
+	float: none;
+	color: black;
+	text-align: left;
+}
+.column h3 {
+	color: black;
+	padding: 10px 10px 0px 10px;
+}
+.column  p {
+	color: rgb(139, 128, 128);
+	padding:0 10px;
+    font-size: 13px;
+    font-weight: 100
+}
+.column a:hover {
+	color: #fff;
+	/*background: #373737;*/
+}
+.row:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+@media(max-width: 650px){
+	.column {
+		width: 100%;
+		height: auto;
+	}
 }
