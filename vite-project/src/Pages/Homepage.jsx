@@ -10,7 +10,7 @@ const Homepage = () => {
          
           </Box>  
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
