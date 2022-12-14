@@ -1,25 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 *{
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
-/*.navbar {
-	overflow: hidden;
-	background: #4CAF50;
-}
-.navbar a {
-	float: left;
-	font-size: 16px;
-	color: white;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-	text-transform: uppercase;
-}*/
+
 .d {
 	float: right;
 	overflow: hidden;
