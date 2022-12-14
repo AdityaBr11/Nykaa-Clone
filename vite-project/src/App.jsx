@@ -1,5 +1,6 @@
 
 import './App.css'
+import Footer from './Components/Footer'
 import Homepage from './Pages/Homepage'
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
   return (
     <div>
       <Homepage/>
+      <Footer/>
     </div>
   )
 }
