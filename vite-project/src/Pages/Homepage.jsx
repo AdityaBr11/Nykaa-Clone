@@ -1,3 +1,5 @@
+
+   
 import React from 'react'
 import '../App.css'
 import { BrandSlider, EditorC, Essential, FabSec, TopSlider } from '../Components/Slider'
@@ -5,13 +7,8 @@ import { BrandSlider, EditorC, Essential, FabSec, TopSlider } from '../Component
 const Homepage = () => {
   return (
     <div>
-      <TopSlider/>
-      <FabSec/>
-      <Essential/>
-      <BrandSlider/>
-      <EditorC/>
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
