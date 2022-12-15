@@ -87,7 +87,7 @@ const Footer = () => {
               src="https://play.google.com/intl/en_us/badges/images/generic/en_badge_web_generic.png?hl=fr"
               alt="avtar"
             />
-            <Image borderRadius={"10px"} width={"120px"} src="https://e7.pngegg.com/pngimages/2/670/png-clipart-logo-app-store-font-brand-product-app-store-play-store-text-logo.png" alt="avtar" />
+            <Image borderRadius={"6px"} width={"120px"} src="https://e7.pngegg.com/pngimages/2/670/png-clipart-logo-app-store-font-brand-product-app-store-play-store-text-logo.png" alt="avtar" />
             </Flex>
           </Box>
           <Box>
