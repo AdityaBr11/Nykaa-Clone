@@ -1,4 +1,8 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 *{
   margin: 0px;
   padding: 0px;
@@ -20,18 +24,18 @@
 
 }
 .navbar a:hover, .d:hover .d-btn {
-	background: none;
+	background: white;
     color: rgb(255,143,186);
 }
 .d-content {
 	display: none;
-	position: absolute;
+	position: fixed;
 	background: white;
 	width: 50%;
 
 	left: -0.5;
     /*right: 10;*/
-    margin:  auto;
+    margin: 4px auto;
 	z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 0 0 5px 5px;
@@ -42,10 +46,10 @@
 	display: none;
 	position: absolute;
 	background: white;
-	width: 60%;
+	width: 65%;
 	/*left: 1;*/
     right: 10;
-    margin: auto;
+    margin:4px auto;
 	z-index: 10;
     box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
     border-radius: 0 0 5px 5px;
@@ -58,29 +62,37 @@
 	float: left;
     display: block;
 	width: auto;
-	padding: 10px;
-    border: "1px solid red"
-	
+	padding: 10px;	
+	background: white;
+
 }
 .column a {
 	display: flex;
 	float: none;
 	color: black;
 	text-align: left;
+	background: white;
+
 }
 .column h3 {
 	color: black;
 	padding: 10px 10px 0px 10px;
+	background: white;
+
 }
 .column  p {
 	color: rgb(139, 128, 128);
 	padding:0 10px;
     font-size: 13px;
-    font-weight: 100
+    font-weight: 100;
+	background: white;
+
 }
 .column a:hover {
 	color: #fff;
 	/*background: #373737;*/
+	background: white;
+
 }
 .row:after {
 	content: '';
