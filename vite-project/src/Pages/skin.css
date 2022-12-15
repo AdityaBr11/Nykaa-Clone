@@ -1,0 +1,124 @@
+.brand {
+  margin: 0 48px 0 48px;
+}
+
+.brand-image-1 {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 15px 0 20px 0;
+}
+
+.brand-image-1 div {
+  width: 309px;
+  padding: 0 12px 0 12px;
+}
+
+.brand-image-1 img {
+  border-radius: 8px;
+}
+
+.brand-image-1 > div > p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #001325;
+}
+
+.brand-image-1 > div > p + p {
+  font-size: 15px;
+  font-family: inter;
+  text-align: center;
+  color: #001325;
+}
+
+.brand-image-2 {
+  display: flex;
+  justify-content: center;
+  margin: 5px 0 20px 0;
+  gap: 10px;
+}
+.brand-image-2 div {
+  width: 309px;
+  padding: 0 12px 0 12px;
+}
+.brand-image-2 img {
+  border-radius: 8px;
+}
+
+.brand-image-2 > div > p {
+  font-size: 16px;
+  font-weight: 500;
+  text-align: center;
+  color: #001325;
+}
+
+.brand-image-2 > div > p + p {
+  font-size: 15px;
+  font-family: inter;
+  text-align: center;
+  color: #001325;
+}
+
+.shop {
+  margin: 20px 48px 0 48px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 2;
+}
+
+.banner-skincare {
+  margin: 50px 48px 60px 48px;
+}
+
+.banner-skincare img {
+  width: 100%;
+}
+
+.skin-type {
+  display: flex;
+  margin: 10px 48px 0 48px;
+  justify-content: center;
+  gap: 8px;
+}
+
+.budget-buys {
+  display: flex;
+  margin: 10px 48px 60px 48px;
+  justify-content: center;
+}
+
+.trending {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 2;
+  margin: 10px 48px 0 48px;
+  padding: 16px 0px 24px 20px;
+}
+
+.trending div {
+  height: 321px;
+  padding: 0 12px 0 8px;
+  /* gap:20px */
+}
+
+.trending img {
+  border-radius: 7px;
+}
+
+.h {
+  text-align: center;
+  font-size: 32px;
+  font-family: 600;
+  font-family: inter;
+  color: #001325;
+  margin-top: 30px;
+}
+
+.try-buy {
+  margin: 50px 48px 60px 48px;
+}
+
+.try-buy img {
+    width: 100%;
+  }
