@@ -1,0 +1,218 @@
+#makeup{
+    margin-top: 110px;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+#brand>h1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+#brand>div{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+#brand>div>div>img{
+    border-radius: 5px;
+}
+
+#brand>div>div>h2{
+    font-weight: 600;
+}
+
+#category{
+    background-color: rgb(251, 251, 251);
+}
+#category>h1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 30px;
+}
+#category>div{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+}
+
+#bestseller{
+    background-color: rgb(237, 237, 237);
+    text-align: center;
+    font-size: 25px;
+}
+#bestseller>div{
+    width: 80%;
+    height: 300px;
+    margin: auto;
+    position: relative;
+   
+  display:flex;
+  margin: auto;
+  border: 1 solid rgb(184, 177, 177) 2px;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  background-color: white;
+  margin-bottom: 25px;
+}
+#bestseller>h1{
+    margin: 15px;
+}
+#bestseller>div>div{
+    width: 50%;
+    aspect-ratio: 3/4;
+    border-left: 0.5px solid rgb(179, 167, 167);
+    font-size: 14px;
+    
+}
+#bestseller>div>div>img{
+   height: 160px;
+}
+#bestseller>div>div>h3{
+   color: rgb(153, 155, 155);
+   font-size: 12px;
+}
+#bestseller>div>div>#star{
+    font-size: 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+  
+ }
+ #star>h2{
+    font-size: 12px;
+    margin-left: 5px;
+ }
+ #price{
+    display: flex;
+    gap: 5px;
+justify-content: center;
+ }
+
+ .dis{
+    color: rgb(17, 235, 141);
+ }
+
+ #luxe{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    background-color: rgb(251, 251, 251);
+ }
+ #luxe>h1{
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 60px;
+ }
+
+ .nykaa>h1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    padding: 30px;
+    background-color: rgb(251, 251, 251);
+ }
+ .nykaa>div{
+     width: 95%;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+     gap: 20px;
+ }
+.nyka{
+    background-color: rgb(242, 236, 236);
+}
+ .nyka>h1{
+    text-align: center;
+    font-size: 34px;
+    font-weight: 700;
+    padding: 30px;
+  
+ }
+ .nyka>div{
+     width: 85%;
+     height: 300px;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(3,1fr);
+ }
+
+ #budget{
+    background-color: rgb(245, 243, 243);
+ }
+ #budget>h1{
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 60px;
+    text-align: center;
+    padding: 30px;
+ }
+ #budget>div{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+ }
+ #black{
+    display: flex;
+    justify-content: center;
+    padding: 40px;
+    border-radius: 5px;
+ }
+
+ #trending{
+    background-color:white;
+ }
+ #trending>h1{
+    font-size: 34px;
+    font-weight: 700;
+    margin-top: 60px;
+    text-align: center;
+    padding: 30px;
+ }
+ #trending>div{
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap:35px;
+    text-align: center;
+    padding-bottom: 40px;
+
+ }
+ #trending>div>img{
+    width: 100%;
+    border-radius: 5px;
+    margin: auto;
+ }
+    #last{
+        display: flex;
+        justify-content: center;
+        background-color: white;
+        padding: 40px;
+      
+    }
+    #last>img{
+        border-radius: 5px;
+    }
+    img{
+        border-radius: 5px;
+    }
