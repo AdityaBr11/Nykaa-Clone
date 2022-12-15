@@ -89,6 +89,14 @@
 	display: block;
 	clear: both;
 }
+.bestS{
+	animation: blink 2s linear infinite;
+}
+@keyframes blink{
+	0%{opacity: 0;}
+	50%{opacity: .5;}
+	100%{opacity: 1;}
+}
 @media(max-width: 650px){
 	.column {
 		width: 100%;
