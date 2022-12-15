@@ -398,10 +398,10 @@ export const Gamezone = () => {
 export const Popupstores = () => {
   return (
     <>
-      <div className="focus-container">
+      <div className="pop-container">
         <h2 id="h2">Pop-Up Stores</h2>
         <p id="p">From Nykaa Fashion</p>
-        <div className="focus-brand">
+        <div className="pop-brand">
           <div className="focus-image-div">
             <img
               className="focus-img"
@@ -422,6 +422,45 @@ export const Popupstores = () => {
             <div className="pop-description">
               <p>Up to 60% off : Products Beyond Beauty</p>
               <p>Chic styles boasting exceptional comfort</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const Beautyadvice = () => {
+  return (
+    <>
+      <div className="pop-container" style={{ marginBottom: "25px" }}>
+        <h2 id="h2">Beauty Advice</h2>
+        <p id="p">Discover Latest Tips & Tricks</p>
+        <div className="pop-brand">
+          <div className="focus-image-div">
+            <img
+              className="focus-img"
+              src="https://images-static.nykaa.com/uploads/71c7558d-637c-40ee-b09b-7dfda35cf125.jpg?tr=w-600,cm-pad_resize"
+              alt="nykaa-tv"
+            />
+            <div className="pop-description">
+              <p>
+                Catch Up On Top Trends, Expert Advice, Fresh Launches & More
+              </p>
+              <p style={{ color: "#E80071" }}>Watch Now</p>
+            </div>
+          </div>
+          <div className="focus-image-div">
+            <img
+              className="focus-img"
+              src="https://images-static.nykaa.com/uploads/a3720b61-fd58-40ff-90cd-72eb5b5ee3d4.jpg?tr=w-600,cm-pad_resize"
+              alt="zivame"
+            />
+            <div className="pop-description">
+              <p>
+                Catch Up On Top Trends, Expert Advice, Fresh Launches & More
+              </p>
+              <p style={{ color: "#E80071" }}>Read More</p>
             </div>
           </div>
         </div>
