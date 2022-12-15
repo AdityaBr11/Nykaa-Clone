@@ -1,3 +1,4 @@
+
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Appliances from '../../Pages/Appliances'
@@ -13,8 +14,15 @@ const AllRoutes = () => {
         <Route
         path="*"
         element={<Navigate to="/not-found" replace />}/>
-    </Routes>
-  )
-}
+import React from "react";
+import { Route, Routes } from "react-router-dom";
+import Homepage from "../../Pages/Homepage";
 
-export default AllRoutes
+
+const AllRoutes = () => {
+  return (
+    </Routes>
+  );
+};
+
+export default AllRoutes;

@@ -1,7 +1,10 @@
 .top-container {
   height: 1002px;
-  width: 100%;
-  margin: 0 48px 0 48px;
+  /* //make changes here for the display */
+  width: 96%;
+  margin: 0 0px 0 23px;
+  padding: 0 5px 0 12px;
+  /* border: 1px solid red; */
 }
 
 .top-brand {
@@ -11,7 +14,7 @@
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 3;
   gap: 0px;
-  padding: 12px 0 0 0;
+  padding: 12px 0px 0 0;
 }
 
 .top-brand p {
@@ -34,8 +37,8 @@
 
 .image-div {
   height: 299px;
-  width: 425px;
-  padding: 0 12px 0 12px;
+  width: 430px;
+  padding: 0 5px 0 12px;
   margin: 0;
 }
 
@@ -80,10 +83,12 @@
 
 .poster {
   display: flex;
-  width: 100%;
+  /* //make changes here for the display */
+  width: 96%;
   height: 138px;
-  margin: 0 48px 0 48px;
-  padding: 0 0 12px 0;
+  margin: 0 0px 0 23px;
+  padding: 0 0 12px 12px;
+  /* border: 1px solid red; */
 }
 
 .poster div {
@@ -102,7 +107,7 @@
   display: grid;
   width: 100%;
   height: 887px;
-  margin: 0 12px 0 12px;
+  margin: 0 12px 0 2px;
   grid-template-columns: repeat(5, 1fr);
   grid-template-rows: 2;
   gap: 0px;
@@ -119,7 +124,7 @@
 .feature-description {
   height: 95px;
   width: 231px;
-  padding: 16px 16px 16px 16px;
+  padding: 6px 16px 16px 16px;
   border-bottom: 1px solid #d6d9dc;
   border-left: 1px solid #d6d9dc;
   border-right: 1px solid #d6d9dc;
@@ -133,7 +138,7 @@
   text-align: left;
   width: 197px;
   word-spacing: 0px;
-  padding: 2px 0 6px 0px;
+  padding: 2px 0 0px 0px;
 }
 
 .featured-brand p + p {
@@ -150,12 +155,18 @@
 }
 
 .featured-container {
-  margin: 0 48px 0 48px;
+  margin: 0 0px 0 23px;
+  /* //make changes here for the display */
+  width: 96%;
+  /* border: 1px solid red; */
 }
 
 .only-container {
-  width: 100%;
-  margin: 0 48px 0 48px;
+  /* //make changes here for the display */
+  width: 96%;
+  margin: 0 0px 0 23px;
+  padding: 0 5px 0 8px;
+  /* border: 1px solid red; */
 }
 
 .feature-3 {
@@ -165,7 +176,8 @@
 .focus-container {
   height: 487px;
   width: 1253px;
-  margin: 0 48px 0 48px;
+  margin: 0 48px 0 18px;
+  /* border: 1px solid red; */
 }
 
 .focus-img {
@@ -216,12 +228,16 @@
 }
 
 .game-container {
-  margin: 0 48px 0 48px;
+  /* //make changes here for the display */
+  width: 96%;
+  margin: 0 0px 0 23px;
+  padding: 0 12px 0 12px;
+  /* border: 1px solid red; */
 }
 
 .game-img {
   height: 313px;
-  width: 1253px;
+  width: 100%;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -257,6 +273,20 @@
   height: 22px;
   width: 596px;
   padding: 2px 0 0 24px;
+}
+
+.pop-container {
+  /* //make changes here for the display */
+  width: 96%;
+  margin: 0 0px 0 23px;
+  padding: 0px 0 0 4px;
+  /* border: 1px solid red; */
+}
+
+.pop-brand {
+  display: flex;
+  gap: 30px;
+  padding: 12px 12px 0 10px;
 }
 
 @media screen and (min-width: 320px) and (max-width: 483px) {
