@@ -59,9 +59,10 @@ const Navbar=() =>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
                         <List spacing={3} display={{base: 'grid',md: 'flex',lg: 'flex'}}>
                             <Heading><Link to="#">Logo</Link></Heading>
-
+                              
+                               
                             <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
-                                <li><Link to="#" ><div class="d">
+                                <li><Link to="/" ><div class="d">
                                     <button class="d-btn">Categories</button>
                                 </div></Link></li>
                             </ListItem>
