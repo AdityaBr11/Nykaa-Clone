@@ -115,7 +115,7 @@ export const TopSlider = () => {
   return (
     <div className="w-full">
       <div>
-      <div className="w-[97%] mx-auto mt-5">
+      <div className="w-[97%] mx-auto mt-32">
             <h1 className="text-2xl font-bold">Best In Beauty</h1>
             <p className="text-lg font-semibold text-gray-600">
             Today’s Top Offers
@@ -132,7 +132,8 @@ export const TopSlider = () => {
           showDots={true}
           rewind
           autoPlaySpeed={2500}
-          className=""
+          
+          className="-z-0"
         >
           <div className="cursor-pointer">
             <img
@@ -253,8 +254,8 @@ export const FabSec = () => {
         />
       </div>
       <div className="mt-10">
-        <div className="border border-gray-200 h-[330px] shadow-md px-4">
-          <Carousel responsive={responsive} className=" h-[360px] cursor-pointer">
+        <div className="border border-gray-200 h-[330px] shadow-md px-4 ">
+          <Carousel responsive={responsive} className=" h-[360px] cursor-pointer -z-0">
             {fav.map((e) => (
               <div key={e.id} className=" rounded-2xl">
                 <img
@@ -314,7 +315,7 @@ export const Essential = () => {
           </div>
           <div className="mt-10">
             <div className="border border-gray-200 h-[330px] shadow-md px-4">
-              <Carousel responsive={responsive} className=" h-[360px]">
+              <Carousel responsive={responsive} className=" h-[360px] -z-0">
                 {essentials.map((e) => (
                   <div key={e.id} className=" rounded-2xl  mr-2 cursor-pointer">
                     <img
@@ -485,7 +486,7 @@ export const BrandSlider=()=>{
           <div>
             <h1 className="text-xm font-bold mt-2">Luxe</h1>
             <div className="mt-2">
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive}  className="-z-0">
               {brandDa.map((e)=>(
                 <div key={e.id} className="mr-6 border border-gray-200 md:w-[241px] rounded-xl shadow-lg cursor-pointer" >
                    <img className="w-[100%] rounded-t-xl" src={e.src} alt="" />
@@ -500,7 +501,7 @@ export const BrandSlider=()=>{
           <div>
             <h1 className="text-xm font-bold mt-3">Makeup</h1>
             <div className="mt-2">
-            <Carousel responsive={responsive}>
+            <Carousel responsive={responsive}  className="-z-0">
               {brandDa.map((e)=>(
                 <div key={e.id} className="mr-6 border border-gray-200 md:w-[241px] rounded-xl shadow-lg cursor-pointer">
                    <img className="w-[100%] rounded-t-xl" src={e.src2} alt="" />
@@ -515,7 +516,7 @@ export const BrandSlider=()=>{
           <div>
             <h1 className="text-xm font-bold mt-3">Skin</h1>
             <div className="mt-2">
-            <Carousel responsive={responsive} >
+            <Carousel responsive={responsive}  className="-z-0" >
               {brandDa.map((e)=>(
                 <div key={e.id} className="mr-6 border border-gray-200 md:w-[241px] rounded-xl shadow-lg cursor-pointer">
                    <img className="w-[100%] rounded-t-xl" src={e.src3} alt="" />
@@ -591,7 +592,7 @@ export const EditorC=()=>{
 
   return(
     <div className="w-full">
-      <div className="w-[95%] mx-auto mt-8">
+      <div className="w-[95%] mx-auto mt-8 mb-10">
         <div>
         <h1 className="text-2xl font-bold">Editor’s Choice</h1>
             <p className="text-lg font-semibold text-gray-600">
@@ -600,7 +601,7 @@ export const EditorC=()=>{
         </div>
 
         <div className="">
-          <Carousel responsive={responsive}>
+          <Carousel responsive={responsive}  className="-z-0">
             {Edc.map((e)=>(
               <div key={e.id} className="mr-6 border border-gray-200 rounded-xl shadow-xl mt-2">
                 <img className="w-full rounded-t-xl" src={e.src} alt="" />

@@ -1,6 +1,6 @@
 .top-container {
   height: 1002px;
-  width: 1253px;
+  width: 100%;
   margin: 0 48px 0 48px;
 }
 
@@ -80,7 +80,7 @@
 
 .poster {
   display: flex;
-  width: 1253px;
+  width: 100%;
   height: 138px;
   margin: 0 48px 0 48px;
   padding: 0 0 12px 0;
@@ -88,19 +88,19 @@
 
 .poster div {
   height: 126px;
-  width: 638px;
+  width: 100%;
   padding: 0 12px 0 12px;
 }
 
 .poster img {
   border-radius: 10px;
-  width: 614px;
+  width: 665px;
   height: 102px;
 }
 
 .featured-brand {
   display: grid;
-  width: 1277px;
+  width: 100%;
   height: 887px;
   margin: 0 12px 0 12px;
   grid-template-columns: repeat(5, 1fr);
@@ -154,6 +154,7 @@
 }
 
 .only-container {
+  width: 100%;
   margin: 0 48px 0 48px;
 }
 

@@ -73,7 +73,9 @@ const Navbar=() =>
 console.log(detial,"hogye")
     return (
         <Box>
-            <Box width={'full'} h={{base: 'auto',lg: 10}} backgroundImage={`url(https://adn-static1.nykaa.com/media/wysiwyg/2021/common-strip.jpg)`} position={'fixed'} top='0'>
+
+            <Box width={'full'} h={10} backgroundImage={`url(https://adn-static1.nykaa.com/media/wysiwyg/2021/common-strip.jpg)`} position={'fixed'} top='0' className='z-20'>
+
                 <Box display={'flex'} w={{base: '100%',md: '80%',lg: '80%'}} m={'auto'} justifyContent={{base: 'space-between',md: 'none'}} p={2} alignItems={'center'} textAlign='center'  >
                     <Link to="#" rel='noopener noreferrer'><Text fontWeight={{base: 650}} fontSize={{base: '11.8px',md: '14px',lg: '18px'}} _hover={{color: 'white'}}>BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals</Text></Link>
 
@@ -90,7 +92,9 @@ console.log(detial,"hogye")
                     </Box>
                 </Box>
             </Box>
-            <Box boxShadow='rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;' backgroundColor={'white'} position={'fixed'} w='100%' top={10}>
+
+            <Box boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px' position={'fixed'} w='100%' top={10} bgColor={'white'} className="z-20 ">
+
                 <Box w={'80%'} h={{lg: 68,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={500} fontSize={'16px'}>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
                         <List spacing={1} display={{base: 'grid',md: 'flex',lg: 'flex'}} >
