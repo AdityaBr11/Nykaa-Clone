@@ -103,6 +103,13 @@ console.log(detial,"hogye")
                             <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
                                 <li><Link to="#" ><div className="d">
                                     <Button className="d-btn">Categories</Button>
+                        <List spacing={3} display={{base: 'grid',md: 'flex',lg: 'flex'}}>
+                            <Heading><Link to="#">Logo</Link></Heading>
+                              
+                               
+                            <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
+                                <li><Link to="/" ><div class="d">
+                                    <button class="d-btn">Categories</button>
                                 </div></Link></li>
                             </ListItem>
                             <ListItem>
