@@ -8,7 +8,7 @@ import { BrowserRouter } from "react-router-dom";
 //122806122719-hsoe2eocu4ilnidqk645ui83d5fiaus8.apps.googleusercontent.com
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-      <GoogleOAuthProvider clientId="122806122719-hsoe2eocu4ilnidqk645ui83d5fiaus8.apps.googleusercontent.com">
+    <GoogleOAuthProvider clientId="122806122719-hsoe2eocu4ilnidqk645ui83d5fiaus8.apps.googleusercontent.com">
     <ChakraProvider>
       <BrowserRouter>
       <App />
