@@ -1,0 +1,118 @@
+#product{
+    padding-top: 120px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(242, 234, 234);
+}
+
+.heading{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 30px;
+}
+#Carousel{
+    width: 85%;
+    margin: auto;
+    padding-bottom: 30px;
+      }
+    
+  #star{
+    font-size: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+      
+     }
+     #box{
+        width: 85%;
+        margin: auto;
+        display: flex;
+       gap: 40px;
+       justify-content: center;
+     }
+
+     #item{
+        width: 65%;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 20px;
+        
+     }
+     #item>div{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 500px;
+        border-radius:5px;
+        /* border: 1px solid rgb(213, 205, 205); */
+        background-color: white;
+        align-items: center;
+     }
+     #item>div>img{
+        width: 100%;
+        height: 280px;
+        border-radius:5px;
+     }
+
+     #star{
+        display: flex;
+        font-size: 14px;
+        gap: 5px;
+     }
+     #price{
+        display: flex;
+        gap: 5px;
+    justify-content: center;
+     }
+    #price>h1{
+        color: rgb(145, 142, 142);
+    }
+     .dis{
+        color: rgb(9, 139, 31);
+     }
+   
+     #addbag{
+        display: flex;
+        height: 60px;
+        font-size: 25px;
+        
+        width: 100%;
+        margin-bottom: 0px;
+       
+     }
+    
+     #heart{
+      width: 30%;
+      font-size:30px ;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fc2779;
+      border: 1px solid rgb(223, 215, 216);
+     }
+     
+     #bag{
+      font-size: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 77%;
+      font-weight: bold;
+      background-color:#fc2779;
+      color: white;
+     }
+     
+  
+    #chakra{
+      width: 23%;
+    
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    #chakra>div{
+      background-color: white;
+      border-radius: 7px;
+
+    }
