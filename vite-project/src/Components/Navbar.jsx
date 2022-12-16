@@ -105,22 +105,13 @@ const Navbar=() =>
 
                             <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
                                 <li><Link to="#" ><div className="d">
-                                    <Button className="d-btn">Categories</Button>
-                        <List spacing={3} display={{base: 'grid',md: 'flex',lg: 'flex'}}>
-                            <Heading><Link to="#">Logo</Link></Heading>
-                              
-                               
-                            <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
-                                <li><Link to="/" ><div class="d">
-                                    <button class="d-btn">Categories</button>
-                                </div></Link></li>
-                            </ListItem>
+                                    <Button className="d-btn">Categories</Button> </div> </Link> </li> </ListItem>
                             <ListItem>
                                 <Link to="#">
                                     <div className="d">
                                         <Button className="d-btn">Brands</Button>
                                         <div className="d-content b-content">
-                                            <div className="row" style={{backgroundColor: 'white',zIndex: 'inherit'}}>
+                                            <div className="row text-xs font-thin" style={{backgroundColor: 'white',zIndex: 'inherit'}} >
                                                 <div className="column">
                                                     <h3>HTML and CSS</h3>
                                                     <Link to="#">Learn HTML</Link>
@@ -433,7 +424,7 @@ const Navbar=() =>
                 </Box>
 
             </Box>
-            <Box boxShadow='rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;' position={'fixed'} w='100%' top={'100px'}>
+            <Box boxShadow='rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;' position={'relative'} className='z-10 bg-white' w='100%' top={'100px'}>
                 <Box w={'80%'} h={{lg: 38,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={100} fontSize={'14px'}>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
                         <List display={{base: 'grid',md: 'flex',lg: 'flex'}}>

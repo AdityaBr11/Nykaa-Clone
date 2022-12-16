@@ -14,13 +14,6 @@ const AllRoutes = () => {
         <Route
         path="*"
         element={<Navigate to="/not-found" replace />}/>
-import React from "react";
-import { Route, Routes } from "react-router-dom";
-import Homepage from "../../Pages/Homepage";
-
-
-const AllRoutes = () => {
-  return (
     </Routes>
   );
 };
