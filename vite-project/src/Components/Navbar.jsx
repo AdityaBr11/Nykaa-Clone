@@ -104,7 +104,7 @@ const Navbar=() =>
                             <Heading textAlign={'center'} ><Link to="#"><Image w={'83px'} src={Logo} /></Link></Heading>
 
                             <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
-                                <li><Link to="#" ><div className="d">
+                                <li><Link to="/product" ><div className="d">
                                     <Button className="d-btn">Categories</Button> </div> </Link> </li> </ListItem>
                             <ListItem>
                                 <Link to="#">
@@ -430,7 +430,7 @@ const Navbar=() =>
                         <List display={{base: 'grid',md: 'flex',lg: 'flex'}}>
 
                             <ListItem>
-                                <Link to="#">
+                                <Link to="/makeup">
                                     <div className="d"  >
                                         <Button className="d-btn">Makeup</Button>
                                         <div className="d-content b-content">
@@ -536,7 +536,7 @@ const Navbar=() =>
                                 </Link>
                             </ListItem>
                             <ListItem>
-                                <Link to="#">
+                                <Link to="/skin">
                                     <div className="d">
                                         <Button className="d-btn">Skin</Button>
                                         <div className="d-content">
