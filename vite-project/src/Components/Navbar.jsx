@@ -1,10 +1,10 @@
 //Varinder
-import React, {useState} from 'react'
+import React,{useState} from 'react'
 import {Box,Heading,Text,Button,Input,InputGroup,InputLeftElement,Image,Flex} from "@chakra-ui/react";
 import {AiOutlineMobile,AiOutlineGift,AiOutlineArrowRight} from "react-icons/ai";
 import {GoLocation,GoSearch} from "react-icons/go";
 import {IoIosHelpCircleOutline} from "react-icons/io";
-import {MdOutlineShoppingBasket} from "react-icons/md";
+//import {MdOutlineShoppingBasket} from "react-icons/md";
 import {Link} from 'react-router-dom';
 import {useGoogleLogin} from '@react-oauth/google';
 import axios from 'axios';
@@ -25,7 +25,7 @@ import {FcGoogle} from "react-icons/fc";
 
 import "../App.css";
 import Logo from '../../public/loGo1.jpg'
-const REDIRECT_URI = window.location.to;
+const REDIRECT_URI=window.location.to;
 const Navbar=() =>
 {
 
@@ -46,18 +46,21 @@ const Navbar=() =>
     ]
     const [detial,setDetail]=useState([]);
     const [verfiy,Setverfiy]=useState(false);
-    const login = useGoogleLogin({
-        onSuccess: async respose => {
-            try {
-                const res = await axios.get("https://www.googleapis.com/oauth2/v3/userinfo", {
+    const login=useGoogleLogin({
+        onSuccess: async respose =>
+        {
+            try
+            {
+                const res=await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",{
                     headers: {
                         "Authorization": `Bearer ${respose.access_token}`
                     }
                 })
                 Setverfiy(true)
-     setDetail([...detial,res.data])
-                
-            } catch (err) {
+                setDetail([...detial,res.data])
+
+            } catch(err)
+            {
                 console.log(err)
 
             }
@@ -70,7 +73,7 @@ const Navbar=() =>
         setDetail([]);
         Setverfiy(false)
     }
-console.log(detial,"hogye")
+    console.log(detial,"hogye")
     return (
         <Box>
             <Box width={'full'} h={{base: 'auto',lg: 10}} backgroundImage={`url(https://adn-static1.nykaa.com/media/wysiwyg/2021/common-strip.jpg)`} position={'fixed'} top='0'>
@@ -94,7 +97,7 @@ console.log(detial,"hogye")
                 <Box w={'80%'} h={{lg: 68,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={500} fontSize={'16px'}>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
                         <List spacing={1} display={{base: 'grid',md: 'flex',lg: 'flex'}} >
-                            <Heading textAlign={'center'} ><Link to="#"><Image w={'83px'} src={Logo}/></Link></Heading>
+                            <Heading textAlign={'center'} ><Link to="#"><Image w={'83px'} src={Logo} /></Link></Heading>
 
                             <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
                                 <li><Link to="#" ><div className="d">
@@ -106,7 +109,7 @@ console.log(detial,"hogye")
                                     <div className="d">
                                         <Button className="d-btn">Brands</Button>
                                         <div className="d-content b-content">
-                                            <div className="row" style={{backgroundColor:'white',zIndex:'inherit'}}>
+                                            <div className="row" style={{backgroundColor: 'white',zIndex: 'inherit'}}>
                                                 <div className="column">
                                                     <h3>HTML and CSS</h3>
                                                     <Link to="#">Learn HTML</Link>
@@ -359,59 +362,59 @@ console.log(detial,"hogye")
                                     placeholder='Search on Nykaa'
                                 />
                                 <InputLeftElement display={{base: 'grid',md: "flex"}} >
-                                    <GoSearch /> 
+                                    <GoSearch />
                                 </InputLeftElement>
                             </InputGroup>
                         </Box>
 
-                        {detial.length==0 ? <Menu>
-                <MenuButton as={Button} colorScheme='pink' fontSize={{base: 1,s: 5,md: 10}}>
-                    Sign in
-                </MenuButton>
-                <MenuList float={'left'} width={21} p={2}>
-                    <MenuGroup >
-                        <Heading fontSize={20} fontWeight={400} m={"8px 0"}>Login / Create Account</Heading>
-                        <Text fontSize={10}>Register Now and get <b>2000 Nykaa reward point instantly!</b></Text>
-                        <MenuItem>
-                            <Button w={'100%'} fontSize={13}>Sign in with Mobile/Email</Button>
-                        </MenuItem>
-                        <MenuItem>
-                    
-                            <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={login}>
-                        <FcGoogle  /> Google
-                                </Button>
-                                
-                        </MenuItem>
-                    </MenuGroup>
+                        {detial.length==0? <Menu>
+                            <MenuButton as={Button} colorScheme='pink' fontSize={{base: 1,s: 5,md: 10}}>
+                                Sign in
+                            </MenuButton>
+                            <MenuList float={'left'} width={21} p={2}>
+                                <MenuGroup >
+                                    <Heading fontSize={20} fontWeight={400} m={"8px 0"}>Login / Create Account</Heading>
+                                    <Text fontSize={10}>Register Now and get <b>2000 Nykaa reward point instantly!</b></Text>
+                                    <MenuItem>
+                                        <Button w={'100%'} fontSize={13}>Sign in with Mobile/Email</Button>
+                                    </MenuItem>
+                                    <MenuItem>
 
-                </MenuList>
+                                        <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={login}>
+                                            <FcGoogle /> Google
+                                        </Button>
+
+                                    </MenuItem>
+                                </MenuGroup>
+
+                            </MenuList>
                         </Menu>:detial.map((e) => (
-                              <Box>
-                            <Menu>
-                <MenuButton as={Button} color='none' bg={'transparent'} fontSize={{base: 1,s: 5,md: 10}}>
-                    {e.name}
-                </MenuButton>
-                <MenuList  width={100} p={2}>
-                    <MenuGroup >
+                            <Box>
+                                <Menu>
+                                    <MenuButton as={Button} color='none' bg={'transparent'} fontSize={{base: 1,s: 5,md: 10}}>
+                                        {e.name}
+                                    </MenuButton>
+                                    <MenuList width={100} p={2}>
+                                        <MenuGroup >
                                             <Heading fontSize={30} fontWeight={400} m={"8px 0"}>{e.name}</Heading>
-                        <Text fontSize={10} p={5}><b>{e.email}</b></Text>
-                       
-                        <MenuItem>
-                    
-                            <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={logout}>
-                        logout
-                                </Button>
-                                
-                        </MenuItem>
-                    </MenuGroup>
+                                            <Text fontSize={10} p={5}><b>{e.email}</b></Text>
 
-                </MenuList>
-                        </Menu>
-                        
-                       
-                                </Box>
+                                            <MenuItem>
+
+                                                <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={logout}>
+                                                    logout
+                                                </Button>
+
+                                            </MenuItem>
+                                        </MenuGroup>
+
+                                    </MenuList>
+                                </Menu>
+
+
+                            </Box>
                         )
-                        
+
                         )}
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20.5 7.2H16.2V6.9C16.3 4.5 14.4 2.5 12 2.5C9.6 2.6 7.8 4.5 7.8 6.9V7.2H3.5C2.9 7.2 2.5 7.6 2.5 8.2V16.4C2.5 19.2 4.7 21.4 7.5 21.4H16.5C19.3 21.4 21.5 19.2 21.5 16.4V8.2C21.5 7.7 21.1 7.2 20.5 7.2ZM9.3 6.9C9.3 5.4 10.5 4.1 12 4C13.5 4.1 14.7 5.4 14.7 6.9V7.2H9.3V6.9ZM20 16.5C20 18.4 18.4 20 16.5 20H7.5C5.6 20 4 18.4 4 16.5V8.7H7.8V10.7C7.6 10.9 7.5 11.2 7.5 11.4C7.5 12 8 12.4 8.5 12.4C9 12.4 9.5 11.9 9.5 11.4C9.5 11.1 9.4 10.9 9.2 10.7V8.7H14.6V10.6C14.4 10.8 14.3 11.1 14.3 11.4C14.3 12 14.7 12.5 15.3 12.5C15.9 12.5 16.4 12.1 16.4 11.5C16.4 11.2 16.3 11 16.1 10.8V8.8H20V16.5Z" fill="black"></path></svg>
                         {/*<MdOutlineShoppingBasket fontSize={{base: "20px",md: 29}} />*/}
@@ -420,54 +423,113 @@ console.log(detial,"hogye")
 
             </Box>
             <Box boxShadow='rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;' position={'fixed'} w='100%' top={'100px'}>
-                <Box w={'80%'} h={{lg: 38,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={200} fontSize={'14px'}>
+                <Box w={'80%'} h={{lg: 38,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={100} fontSize={'14px'}>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
-                        <List  display={{base: 'grid',md: 'flex',lg: 'flex'}}>
-          
-            <ListItem>
+                        <List display={{base: 'grid',md: 'flex',lg: 'flex'}}>
+
+                            <ListItem>
                                 <Link to="#">
-                                    <div className="d bg-white z-10"  >
+                                    <div className="d"  >
                                         <Button className="d-btn">Makeup</Button>
                                         <div className="d-content b-content">
                                             <div className="row">
                                                 <div className="column">
-                                                    <h3>HTML and CSS</h3>
-                                                    <Link to="">Learn HTML</Link>
-                                                    <Link to="">Learn CSS</Link>
-                                                    <Link to="">Bootstrap 4</Link>
+                                                    <h3>Face</h3>
+                                                    <Link to="#">Face Primer</Link>
+                                                    <Link to="#">Concealer</Link>
+                                                    <Link to="#">Foundation</Link>
+                                                    <Link to="#">Compact</Link>
+                                                    <Link to="#">Contour</Link>
+                                                    <Link to="#">Loose Powder</Link>
+                                                    <Link to="#">Tinted Moisturizer</Link>
+                                                    <Link to="#">Blush</Link>
+                                                    <Link to="#">Bronzer</Link>
+                                                    <Link to="#">BB & CC Cream</Link>
+                                                    <Link to="#">Highlighters</Link>
+                                                    <Link to="#">Setting Spray</Link>
+                                                    <Link to="#">Makeup Remover</Link>
+                                                    <Link to="#">Sindoor</Link>
                                                 </div>
                                                 <div className="column">
-                                                    <h3>Server Side</h3>
-                                                    <Link to="">Learn PHP</Link>
-                                                    <Link to="">Learn Python</Link>
-                                                    <Link to="">Learn Node.js</Link>
+                                                    <h3>Eyes</h3>
+                                                    <Link to="#">Kajal</Link>
+                                                    <Link to="#">Eyeliner</Link>
+                                                    <Link to="#">Mascara</Link>
+                                                    <Link to="#">Eye Shadow</Link>
+                                                    <Link to="#">Eye Brow Enchancers</Link>
+                                                    <Link to="#">Eye Primer</Link>
+                                                    <Link to="#">False EyeLashes</Link>
+                                                    <Link to="#">Eye Makeup Remover</Link>
+                                                    <Link to="#">Under Eye Concealer</Link>
+                                                    <Link to="#">Contact Lenses</Link>
+                                                    <br />
+                                                    <h3>Makeup Kits & Combos</h3>
+                                                    <Link to="#">Makeup Kits</Link>
+                                                    <Link to="#">Makeup Combos</Link>
+
                                                 </div>
                                                 <div className="column">
-                                                    <h3>Frameworks</h3>
-                                                    <Link to="">VueJS</Link>
-                                                    <Link to="">Laravel</Link>
-                                                    <Link to="">CodeIgniter</Link>
+                                                    <h3>Lips</h3>
+                                                    <Link to="#">Lipstick</Link>
+                                                    <Link to="#">Liquid Lipstick</Link>
+                                                    <Link to="#">Liquid Crayon</Link>
+                                                    <Link to="#">Lip Gloss</Link>
+                                                    <Link to="#">Lip Liner</Link>
+                                                    <Link to="#">Lip Plumper</Link>
+                                                    <Link to="#">Lip Stain</Link>
+                                                    <br />
+                                                    <h3>Nails</h3>
+                                                    <Link to="#">Nail Polish</Link>
+                                                    <Link to="#">Nail Art Kits</Link>
+                                                    <Link to="#">Nail Care</Link>
+                                                    <Link to="#">Nail Polish Remover</Link>
                                                 </div>
                                                 <div className="column">
-                                                    <h3>Frameworks</h3>
-                                                    <Link to="">VueJS</Link>
-                                                    <Link to="">Laravel</Link>
-                                                    <Link to="">CodeIgniter</Link>
+                                                    <h3>Tools 7 Brushes</h3>
+                                                    <Link to="#">Face Brush</Link>
+                                                    <Link to="#">Eye Brush</Link>
+                                                    <Link to="#">Lip Brush</Link>
+                                                    <Link to="#">Brush Sets</Link>
+                                                    <Link to="#">Brush Cleaners</Link>
+                                                    <Link to="#">Sponges & Applicators</Link>
+                                                    <Link to="#">Eyelash Curlers</Link>
+                                                    <Link to="#">Tweezers</Link>
+                                                    <Link to="#">Sharpeners</Link>
+                                                    <Link to="#">Mirrors</Link>
+                                                    <Link to="#">Makeup Pouches</Link>
+                                                    <div className="column">
+                                                        <h3>Multi-Functional Makeup Palettes</h3>
+                                                    </div>
                                                 </div>
-                                                <div className="column">
-                                                    <h3>Frameworks</h3>
-                                                    <Link to="">VueJS</Link>
-                                                    <Link to="">Laravel</Link>
-                                                    <Link to="">CodeIgniter</Link>
-                                                </div>
-                                                <div className="column">
-                                                    <h3>Frameworks</h3>
-                                                    <Link to="">VueJS</Link>
-                                                    <Link to="">Laravel</Link>
-                                                    <Link to="">CodeIgniter</Link>
-                                                </div>
+
+                                                <br />
+
+
                                             </div>
+                                            <div className="column">
+                                                <h3>Top Brands</h3>
+                                                <Link to="#">Kay Beauty</Link>
+                                                <Link to="#">Huda Beauty</Link>
+                                                <Link to="#">Charlotte Tilbury</Link>
+                                                <Link to="#">Maybelline New York</Link>
+                                                <Link to="#">L'Oreal Paris</Link>
+                                                <Link to="#">Lakme</Link>
+                                                <Link to="#">Nykaa Cosmetics</Link>
+                                                <Link to="#">Nyx Pro.Makeup</Link>
+                                            </div>
+                                            <div className="column">
+                                                <h3>Quicj Links</h3>
+                                                <Link to="#">Combos @ Nykaa</Link>
+                                                <Link to="#">New Launches</Link>
+                                                <Link to="#">NFBA Nominees 2022</Link>
+                                                <Link to="#">Gifts @ Nykaa</Link>
+                                                <Link to="#">The Gift Store</Link>
+
+                                            </div>
+                                           
+                                           
                                         </div>
+
                                     </div>
                                 </Link>
                             </ListItem>
