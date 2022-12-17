@@ -1,0 +1,55 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "src": "https://images-static.nykaa.com/uploads/4162f650-31a3-4d41-a420-ac02caccce89.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Highlighters"
+    },
+    {
+      "id": 2,
+      "src": "https://images-static.nykaa.com/uploads/144c95cd-e1d3-4b0d-8d5a-a9ecda42e737.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Body Lotions"
+    },
+    {
+      "id": 3,
+      "src": "https://images-static.nykaa.com/uploads/0d1737ff-11ae-42e4-95df-937ef71a752b.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Face Serum"
+    },
+    {
+      "id": 4,
+      "src": "https://images-static.nykaa.com/uploads/92447a8b-4cbc-4cfa-9c65-818137cbddf7.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Bridal Makeup"
+    },
+    {
+      "id": 5,
+      "src": "https://images-static.nykaa.com/uploads/8d0d6d65-4c38-461a-8fa2-81c43b4e3052.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Eyeliners"
+    },
+    {
+      "id": 6,
+      "src": "https://images-static.nykaa.com/uploads/b2df2716-c39d-40a7-b2a5-76c728a2590b.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Feminine Hygiene"
+    },
+    {
+      "id": 7,
+      "src": "https://images-static.nykaa.com/uploads/4ea35342-cbb3-44ef-a556-9f1c0f749d93.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Foundation"
+    },
+    {
+      "id": 8,
+      "src": "https://images-static.nykaa.com/uploads/abfde2f7-4d53-4e07-b9f7-4f088b801595.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Fragrances"
+    },
+    {
+      "id": 9,
+      "src": "https://images-static.nykaa.com/uploads/7d79d30f-b511-459c-872b-2cad46a7eee6.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Gifts Sets"
+    },
+    {
+      "id": 10,
+      "src": "https://images-static.nykaa.com/uploads/b21dc0cc-ff53-44e6-988c-624c0cc95c18.jpg?tr=w-240,cm-pad_resize",
+      "tit": "Moisturisers"
+    }
+  ],
+  "cart": []
+}
