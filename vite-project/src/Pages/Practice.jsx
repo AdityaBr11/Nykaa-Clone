@@ -6,18 +6,29 @@ import { getProducts } from '../redux/products/actions'
 const Practice = () => {
     const [SearchParams,setSearchParams]=useSearchParams();
     const [searchparam]=useSearchParams()
-    const initialCategory=SearchParams.getAll("category")
+    const initialCategory=SearchParams.getAll("category");
     // console.log("initialCategory",initialCategory);
+    const initialSort=SearchParams.getAll("sort");
+    console.log(initialSort);
 
     const location=useLocation();
 
-    // console.log(location);
+    console.log(location);
 
 
-    const [category,setCategory]=useState(initialCategory) || [];
-    const products=useSelector(store=>store.products)
+    const [category,setCategory]=useState(initialCategory || []) ;
+
+    const [sort,setSortBy]=useState(initialSort[0] || '') ;
+   
+
+    const products=useSelector(store=>store.products);
+    const loading=useSelector(store=>store.isLoading);
     const dispatch=useDispatch()
 
+
+    const handleSort=(e)=>{
+        setSortBy(e.target.value)
+    }
     const handleCatChange=(e)=>{
         //check if the data is present in the category
         const newCategory=[...category];
@@ -38,19 +49,33 @@ const Practice = () => {
     useEffect(()=>{
         //if the category changes then update the value in the url search params.
         let param={}
-        param.category=category
+        param.category=category;
+
+        sort && (param.sort=sort);
+
         setSearchParams(param)
         ///
         if(location||products.length===0){
+            const SortBy=searchparam.get("sort")
             const getProductParam={
                 params:{
-                    category:searchparam.getAll("category")
+                    category:searchparam.getAll("category"),
+                    _sort:SortBy && 'price',
+                    _order:SortBy
                 }
             }
             dispatch(getProducts(getProductParam))
         }
-    },[products.length,dispatch,category,SearchParams,location.search])
+    },[products.length,dispatch,category,SearchParams,location.search,sort])
     console.log(products);
+
+    if(loading){
+        return(
+            <div className='mt-[200px] text-center'>
+                <h1>Loading....</h1>
+            </div>
+        )
+    }
   return (
     <div className='mt-32'>
         <div className='flex'>
@@ -58,9 +83,17 @@ const Practice = () => {
                 <h1>filter section</h1>
                 <hr />
                 <h1>price</h1>
-                <h1>price low-high</h1>
-                <h1>price high-low</h1>
+                <div  className='flex flex-col justify-center items-center'>
+                <div onChange={handleSort}>
+                    <input type="radio" value='asc' name='sortBy' defaultChecked={sort==="asc"}/> <label>price low-high</label>
+                </div>
+                <div onChange={handleSort}>
+                    <input type="radio" value='desc' name='sortBy' defaultChecked={sort==="desc"}/> <label>price high-low</label>
+                </div>
+                </div>
                 <hr />
+
+
                 <h1>cat</h1>
                 <div className='flex flex-col justify-center items-center'>
                 <div>
