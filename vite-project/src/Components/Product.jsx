@@ -9,9 +9,13 @@ import {
   AccordionIcon,
   AccordionItem,
   AccordionPanel,
+  Checkbox,
   Box,
 } from "@chakra-ui/react";
 const Product = () => {
+  const handleChange=(e)=>{
+    console.log(e.target.value)
+  }
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.
@@ -85,12 +89,11 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Popularity</AccordionPanel>
-              <AccordionPanel pb={4}>Discount</AccordionPanel>
-              <AccordionPanel pb={4}>Name</AccordionPanel>
-              <AccordionPanel pb={4}>Customer Top Rated</AccordionPanel>
-              <AccordionPanel pb={4}>Price: High To Low</AccordionPanel>
-              <AccordionPanel pb={4}>Price: Low To High</AccordionPanel>
+              
+              <AccordionPanel pb={4}>Popularity <Checkbox ml="160px" value='popul' onChange={handleChange} ></Checkbox> </AccordionPanel>
+              <AccordionPanel pb={4}>Discount <Checkbox ml="170px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Name <Checkbox ml="190px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Customer Top Rated <Checkbox ml="89px"></Checkbox></AccordionPanel>
             </AccordionItem>
           </Accordion>
           </div>
@@ -104,8 +107,16 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Makeup</AccordionPanel>
-              <AccordionPanel pb={4}>Fragrance</AccordionPanel>
+              <AccordionPanel pb={4}>Lipstick <Checkbox ml="180px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Kajal <Checkbox ml="200px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Eyeliner <Checkbox ml="180px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Cream <Checkbox ml="190px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Oil <Checkbox ml="215px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Shampoo <Checkbox ml="168px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Nightcream <Checkbox ml="152px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>NailPolish <Checkbox ml="165px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Mirror <Checkbox ml="190px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Eye Shadow <Checkbox ml="150px"></Checkbox></AccordionPanel>
             </AccordionItem>
 
             <AccordionItem>
@@ -117,8 +128,8 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Rs.0 - Rs.499</AccordionPanel>
-              <AccordionPanel pb={4}>Rs.500 - Rs.999</AccordionPanel>
+              <AccordionPanel pb={4}>Price: High To Low <Checkbox ml="100px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Price: Low To High <Checkbox ml="100px"></Checkbox></AccordionPanel>
            </AccordionItem>
 
             <AccordionItem>
@@ -130,8 +141,8 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>10% And Above</AccordionPanel>
-              <AccordionPanel pb={4}>All Discount Products</AccordionPanel>
+              <AccordionPanel pb={4}>10% And Above <Checkbox ml="120px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>All Discount Products <Checkbox ml="80px"></Checkbox></AccordionPanel>
         
             </AccordionItem>
 
@@ -144,10 +155,10 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>4 Star & above 120</AccordionPanel>
-              <AccordionPanel pb={4}>3 Star & above 126</AccordionPanel>
-              <AccordionPanel pb={4}>2 Star & above 126</AccordionPanel>
-              <AccordionPanel pb={4}>1 Star & above 126</AccordionPanel>
+              <AccordionPanel pb={4}>4 Star & above 120 <Checkbox ml="100px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>3 Star & above 126 <Checkbox ml="100px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>2 Star & above 126 <Checkbox ml="100px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>1 Star & above 126 <Checkbox ml="100px"></Checkbox></AccordionPanel>
             </AccordionItem>
             
             <AccordionItem>
@@ -159,24 +170,24 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Paraben Free 61</AccordionPanel>
-              <AccordionPanel pb={4}>Cruelty-Free 40</AccordionPanel>
-              <AccordionPanel pb={4}>Waterproof 39</AccordionPanel>
-              <AccordionPanel pb={4}>Vitamin E 29</AccordionPanel>
-              <AccordionPanel pb={4}>Oil Free 39</AccordionPanel>
-              <AccordionPanel pb={4}>Soap Free 29</AccordionPanel>
+              <AccordionPanel pb={4}>Paraben Free 61 <Checkbox ml="117px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Cruelty-Free 40 <Checkbox ml="123px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Waterproof 39 <Checkbox ml="130px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Vitamin E 29 <Checkbox ml="143px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Oil Free 39 <Checkbox ml="155px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Soap Free 29 <Checkbox ml="140px"></Checkbox></AccordionPanel>
             </AccordionItem>
             
             <AccordionItem>
               <h2>
                 <AccordionButton h={"60px"}>
                   <Box as="span" flex="1" textAlign="left" fontWeight={"600"} fontSize="20px">
-                    Gender
+                    Gender 
                   </Box>
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Female</AccordionPanel>
+              <AccordionPanel pb={4}>Female <Checkbox ml="180px"></Checkbox></AccordionPanel>
             </AccordionItem>
 
             <AccordionItem>
@@ -188,12 +199,12 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Matte 45</AccordionPanel>
-              <AccordionPanel pb={4}>Natural 19</AccordionPanel>
-              <AccordionPanel pb={4}>Glossy 18</AccordionPanel>
-              <AccordionPanel pb={4}>Luminous/Radiant 15</AccordionPanel>
-              <AccordionPanel pb={4}>Satin 9</AccordionPanel>
-              <AccordionPanel pb={4}>Shimmer 7</AccordionPanel>
+              <AccordionPanel pb={4}>Matte 45 <Checkbox ml="160px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Natural 19 <Checkbox ml="150px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Glossy 18 <Checkbox ml="158px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Luminous/Radiant 15 <Checkbox ml="77px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Satin 9 <Checkbox ml="180px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Shimmer 7 <Checkbox ml="155px"></Checkbox></AccordionPanel>
             </AccordionItem>
 
                  
@@ -206,12 +217,12 @@ const Product = () => {
                   <AccordionIcon />
                 </AccordionButton>
               </h2>
-              <AccordionPanel pb={4}>Dark Spots 11</AccordionPanel>
-              <AccordionPanel pb={4}>Brightening 19</AccordionPanel>
-              <AccordionPanel pb={4}>Under Eye Concern 18</AccordionPanel>
-              <AccordionPanel pb={4}>Pores/Blakheads 15</AccordionPanel>
-              <AccordionPanel pb={4}>Whiteheads 9</AccordionPanel>
-              <AccordionPanel pb={4}>Anti Aging 7</AccordionPanel>
+              <AccordionPanel pb={4}>Dark Spots 11 <Checkbox ml="139px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Brightening 19 <Checkbox ml="133px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Under Eye Concern 18 <Checkbox ml="80px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Pores/Blakheads 15 <Checkbox ml="100px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Whiteheads 9 <Checkbox ml="140px"></Checkbox></AccordionPanel>
+              <AccordionPanel pb={4}>Anti Aging 7 <Checkbox ml="150px"></Checkbox></AccordionPanel>
             </AccordionItem>
           </Accordion>
         </div>
