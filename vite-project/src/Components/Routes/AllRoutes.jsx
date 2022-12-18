@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import Appliances from '../../Pages/Appliances'
@@ -11,6 +10,8 @@ import { Skin } from '../../Pages/Skin'
 import CartTest from '../CartTest'
 import Makeup from '../Makeup'
 import Product from '../Product'
+import Loginpage from '../../Pages/Login';
+import Register from '../../Pages/Register';
 
 const AllRoutes = () => {
   return (
@@ -28,8 +29,11 @@ const AllRoutes = () => {
         <Route
         path="*"
         element={<Navigate to="/not-found" replace />}/>
+           <Route path='/login' element={<Loginpage />} />
+            <Route path='/register' element={<Register />}/>
     </Routes>
   );
+
 };
 
 export default AllRoutes;

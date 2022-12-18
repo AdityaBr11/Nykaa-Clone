@@ -28,6 +28,7 @@
     "react-loading-skeleton": "^3.1.0",
     "react-multi-carousel": "^2.8.2",
     "react-redux": "^8.0.5",
+
     "react-router-dom": "^6.5.0",
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.8.9",
@@ -35,6 +36,7 @@
     "redux": "^4.2.0",
     "redux-thunk": "^2.4.2",
     "styled-components": "^5.3.6"
+
   },
   "devDependencies": {
     "@types/react": "^18.0.26",
