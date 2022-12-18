@@ -125,13 +125,28 @@ const Productdetails = () => {
         </div>
         <div className="subdiv2">
           <div>
-            <h1 style={{ height: "auto", fontSize: "20px", textAlign: "left" }}>
+            <h1
+              style={{
+                height: "auto",
+                fontSize: "20px",
+                textAlign: "left",
+                fontWeight: "500",
+                marginBottom: "10px",
+              }}
+            >
               Olay Total Effects Night & Day Cream Combo
             </h1>
-            <p style={{ height: "auto", fontSize: "14px", textAlign: "left" }}>
+            <p
+              style={{
+                height: "auto",
+                fontSize: "14px",
+                textAlign: "left",
+                marginBottom: "10px",
+              }}
+            >
               <span>★★★★☆ </span> 4.4/5 7973 ratings & 12 reviews Q&As
             </p>
-            <p style={{ textAlign: "left" }}>
+            <p style={{ textAlign: "left", marginBottom: "10px" }}>
               <span style={{ color: "grey" }}>
                 MRP:{"  "} <strike> ₹1798</strike>
               </span>
@@ -148,7 +163,14 @@ const Productdetails = () => {
                 30% Off
               </span>
             </p>
-            <p style={{ textAlign: "left", fontSize: "16px", color: "grey" }}>
+            <p
+              style={{
+                textAlign: "left",
+                fontSize: "16px",
+                color: "grey",
+                marginBottom: "10px",
+              }}
+            >
               inclusive of all taxes
             </p>
             <div className="innerdiv">
@@ -175,14 +197,25 @@ const Productdetails = () => {
                 style={{ paddingLeft: "30px", textAlign: "top", width: "40%" }}
               >
                 <p
-                  style={{ fontSize: "18px", color: "grey", fontWeight: "500" }}
+                  style={{
+                    fontSize: "18px",
+                    color: "grey",
+                    fontWeight: "500",
+                    paddingTop: "20px",
+                  }}
                 >
                   Delivery Options
                 </p>
                 <div style={{ marginBottom: "30px" }}>
                   {" "}
                   <input
-                    style={{ width: "100%", height: "40px", fontSize: "16px" }}
+                    style={{
+                      width: "100%",
+                      height: "40px",
+                      fontSize: "16px",
+                      border: "1px solid grey",
+                      marginTop: "20px",
+                    }}
                     type="text"
                     placeholder="Enter Pincode"
                   />
@@ -197,27 +230,43 @@ const Productdetails = () => {
           </div>
         </div>
       </div>
-      <h2 style={{ textAlign: "left" }}>Product Description</h2>
+      <h2
+        style={{
+          textAlign: "left",
+          fontSize: "20px",
+          fontWeight: "600",
+          margin: "30px 0 20px 0",
+        }}
+      >
+        Product Description
+      </h2>
       <div
         style={{
           display: "flex",
           //   border: "1px solid black",
           justifyContent: "space-between",
+          width: "100%",
+          height: "auto",
         }}
-        className="description"
+        className="second-div"
       >
-        <div style={{ width: "74%", height: "auto" }}>
-          {/* <div
-            className="text"
-            style={{
-              textAlign: "left",
-              padding: "20px 20px 40px 18px",
-              height: "auto",
-            }}
-          ></div> */}
-
-          <Collapse startingHeight={200} in={show}>
-            <p style={{ textAlign: "left", paddingLeft: "9px" }}>
+        <div
+          style={{
+            width: "74%",
+            height: "auto",
+            paddingTop: "30px",
+            paddingLeft: "20px",
+          }}
+        >
+          <Collapse startingHeight={220} in={show}>
+            <p
+              style={{
+                textAlign: "left",
+                paddingLeft: "9px",
+                fontSize: "18px",
+                marginBottom: "20px",
+              }}
+            >
               Olay Total Effects Night & Day Cream Combo Contains:
             </p>
             <p
@@ -225,6 +274,7 @@ const Productdetails = () => {
                 textAlign: "left",
                 paddingLeft: "9px",
                 fontSize: "18px",
+                marginBottom: "20px",
               }}
             >
               Explore the entire range of{" "}
@@ -240,25 +290,57 @@ const Productdetails = () => {
                 Olay Kits & Combos{" "}
               </span>
               .
-              <span style={{ color: "#FC2779", fontSize: "20px" }}>
+              <span style={{ color: "#FC2779", fontSize: "19px" }}>
                 Olay Total Effects 7 In One Day Cream - Niacinamide SPF 15
                 Normal: (MRP: 899.00/-) | Quantity: 1 | Expiry Date: 15 July
                 2025
               </span>
             </p>
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_banner.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_img_01.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_img_02.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_footer.png" />
-            <p>
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_banner.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_img_01.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_img_02.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_footer.png"
+            />
+            <p style={{ marginBottom: "20px", marginTop: "20px" }}>
               {" "}
               Olay Total Effects Night Cream - Vitamin C,Niacinamide, Green Tea:
               (MRP: 899.00/-) | Quantity: 1 | Expiry Date: 15 May 2025
             </p>
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_banner.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_img_01.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_img_02.png" />
-            <Image src="https://www.nykaa.com/media/wysiwyg/TE_footer.png" />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_banner.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_img_01.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_img_02.png"
+            />
+            <Image
+              borderRadius="0px"
+              width="100%"
+              src="https://www.nykaa.com/media/wysiwyg/TE_footer.png"
+            />
           </Collapse>
           <Box
             size="sm"
@@ -271,10 +353,18 @@ const Productdetails = () => {
             color="#FC2779"
             fontSize="20px"
             paddingTop="10px"
+            textAlign="center"
           >
             Read {show ? "Less" : "More"}
           </Box>
-          <h2 style={{ textAlign: "left", marginBottom: "40px" }}>
+          <h2
+            style={{
+              textAlign: "left",
+              fontSize: "20px",
+              fontWeight: "600",
+              margin: "30px 0 30px 0",
+            }}
+          >
             Customers also Viewed
           </h2>
 
@@ -367,23 +457,35 @@ const Productdetails = () => {
                     </div>
                   </div>
 
-                  <div style={{ padding: "30px 0 10px 0" }}>
+                  <div style={{ padding: "20px 0 10px 0" }}>
                     <p style={{ fontSize: "18px", color: "grey" }}>
                       Write a review and win 100 reward points !
                     </p>
                     <button
                       style={{
-                        padding: "15px 25px 15px 25px",
+                        padding: "10px 23px 10px 23px",
                         fontSize: "18px",
                         fontWeight: "600",
                         color: "#FC2779",
+                        border:"1px solid grey",
+                        marginTop:"10px"
                       }}
                     >
                       Write Review
                     </button>
                   </div>
                 </div>
-                <h2 style={{ textAlign: "left" }}> Photos From Customers</h2>
+                <h2
+                  style={{
+                    textAlign: "left",
+                    fontSize: "22px",
+                    fontWeight: "600",
+                    marginBottom: "30px",
+                  }}
+                >
+                  {" "}
+                  Photos From Customers
+                </h2>
                 <div className="customer-image">
                   <img
                     style={{ width: "10%" }}
@@ -398,10 +500,267 @@ const Productdetails = () => {
                   <img src="https://images-static.nykaa.com/prod-review/1608119514503_4f24844f-4316-4d89-8eaf-99f6947bbe30_1.JPG?tr=w-145,h-145,cm-pad_resize" />
                 </div>
                 <div className="Reviews">
-                  <h2 style={{ textAlign: "left", margin: "28px 0 18px 0" }}>
+                  <h2
+                    style={{
+                      textAlign: "left",
+                      fontSize: "22px",
+                      fontWeight: "600",
+                      marginBottom: "30px",
+                      marginTop: "30px",
+                    }}
+                  >
                     Most Useful Review
                   </h2>
 
+                  <div style={{ display: "flex", marginBottom: "30px" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        marginRight: "25px",
+                        width: "30%",
+                      }}
+                    >
+                      <img
+                        style={{
+                          width: "20%",
+                          height: "50px",
+                          marginTop: "10px",
+                        }}
+                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
+                      />
+                      <p
+                        style={{
+                          paddingLeft: "8px",
+                          color: "grey",
+                          fontSize: "18px",
+                          textAlign: "left",
+                          margin: "10px ",
+                        }}
+                      >
+                        Paramita Banerjee Sawant
+                      </p>
+                    </div>
+                    <div style={{ width: "70%", textAlign: "left" }}>
+                      <button
+                        style={{
+                          backgroundColor: "green",
+                          fontSize: "22px",
+                          color: "white",
+                          borderRadius: "5px",
+                          padding: "5px 10px 5px 10px",
+                        }}
+                      >
+                        5 <span style={{ color: "white" }}>★</span>
+                      </button>
+                      <p
+                        style={{
+                          fontSize: "18px",
+                          marginBottom: "20px",
+                          marginTop: "20px",
+                        }}
+                      >
+                        "Excellent combination from Olay. Totally effective "
+                      </p>
+                      <p style={{ color: "grey" }}>
+                        This combination of day and night creme is the best for
+                        my sensitive skin. I am 48 years old anf my skin looks
+                        and feels 10 years younger !! Thank you Nykaa ❤
+                      </p>
+                      <div style={{ display: "flex", marginTop: "10px" }}>
+                        <button
+                          style={{
+                            padding: "0px 30px 0px 30px",
+                            fontSize: "20px",
+                            marginRight: "25px",
+                            border: "0.5px solid grey",
+                            color: "#FC2779",
+                            backgroundColor: "white",
+                            height: "50px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          Helpful
+                        </button>
+                        <p
+                          style={{
+                            color: "grey",
+                            fontSize: "18px",
+                            paddingTop: "20px",
+                          }}
+                        >
+                          8 people found this helpful
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="Reviews">
+                  <div style={{ display: "flex", marginBottom: "30px" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        marginRight: "25px",
+                        width: "30%",
+                      }}
+                    >
+                      <img
+                        style={{
+                          width: "20%",
+                          height: "50px",
+                          marginTop: "10px",
+                        }}
+                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
+                      />
+                      <p
+                        style={{
+                          paddingLeft: "8px",
+                          color: "grey",
+                          fontSize: "18px",
+                          textAlign: "left",
+                          margin: "10px ",
+                        }}
+                      >
+                        gazal
+                      </p>
+                    </div>
+                    <div style={{ width: "70%", textAlign: "left" }}>
+                      <button
+                        style={{
+                          backgroundColor: "green",
+                          fontSize: "22px",
+                          color: "white",
+                          borderRadius: "5px",
+                          padding: "5px 10px 5px 10px",
+                        }}
+                      >
+                        5 <span style={{ color: "white" }}>★</span>
+                      </button>
+                      <p
+                        style={{
+                          fontSize: "18px",
+                          marginBottom: "20px",
+                          marginTop: "20px",
+                        }}
+                      >
+                        "Excellent combination from Olay. Totally effective "
+                      </p>
+                      <p style={{ color: "grey" }}>
+                        This combination of day and night creme is the best for
+                        my sensitive skin. I am 48 years old anf my skin looks
+                        and feels 10 years younger !! Thank you Nykaa ❤
+                      </p>
+                      <div style={{ display: "flex", marginTop: "10px" }}>
+                        <button
+                          style={{
+                            padding: "0px 30px 0px 30px",
+                            fontSize: "20px",
+                            marginRight: "25px",
+                            border: "0.5px solid grey",
+                            color: "#FC2779",
+                            backgroundColor: "white",
+                            height: "50px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          Helpful
+                        </button>
+                        <p
+                          style={{
+                            color: "grey",
+                            fontSize: "18px",
+                            paddingTop: "20px",
+                          }}
+                        >
+                          8 people found this helpful
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="Reviews">
+                  <div style={{ display: "flex", marginBottom: "30px" }}>
+                    <div
+                      style={{
+                        display: "flex",
+                        marginRight: "25px",
+                        width: "30%",
+                      }}
+                    >
+                      <img
+                        style={{
+                          width: "20%",
+                          height: "50px",
+                          marginTop: "10px",
+                        }}
+                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
+                      />
+                      <p
+                        style={{
+                          paddingLeft: "8px",
+                          color: "grey",
+                          fontSize: "18px",
+                          textAlign: "left",
+                          margin: "10px ",
+                        }}
+                      >
+                        Anjali Agrawal
+                      </p>
+                    </div>
+                    <div style={{ width: "70%", textAlign: "left" }}>
+                      <button
+                        style={{
+                          backgroundColor: "green",
+                          fontSize: "22px",
+                          color: "white",
+                          borderRadius: "5px",
+                          padding: "5px 10px 5px 10px",
+                        }}
+                      >
+                        5 <span style={{ color: "white" }}>★</span>
+                      </button>
+                      <p
+                        style={{
+                          fontSize: "18px",
+                          marginBottom: "20px",
+                          marginTop: "20px",
+                        }}
+                      >
+                        "Excellent combination from Olay. Totally effective "
+                      </p>
+                      <p style={{ color: "grey" }}>
+                        This combination of day and night creme is the best for
+                        my sensitive skin. I am 48 years old anf my skin looks
+                        and feels 10 years younger !! Thank you Nykaa ❤
+                      </p>
+                      <div style={{ display: "flex", marginTop: "10px" }}>
+                        <button
+                          style={{
+                            padding: "0px 30px 0px 30px",
+                            fontSize: "20px",
+                            marginRight: "25px",
+                            border: "0.5px solid grey",
+                            color: "#FC2779",
+                            backgroundColor: "white",
+                            height: "50px",
+                            marginTop: "10px",
+                          }}
+                        >
+                          Helpful
+                        </button>
+                        <p
+                          style={{
+                            color: "grey",
+                            fontSize: "18px",
+                            paddingTop: "20px",
+                          }}
+                        >
+                          8 people found this helpful
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="Reviews">
                   <div style={{ display: "flex" }}>
                     <div
                       style={{
@@ -424,225 +783,7 @@ const Productdetails = () => {
                           color: "grey",
                           fontSize: "18px",
                           textAlign: "left",
-                        }}
-                      >
-                        Paramita Banerjee Sawant
-                      </p>
-                    </div>
-                    <div style={{ width: "70%", textAlign: "left" }}>
-                      <button
-                        style={{
-                          backgroundColor: "green",
-                          fontSize: "22px",
-                          color: "white",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        5 <span style={{ color: "white" }}>★</span>
-                      </button>
-                      <p style={{ fontSize: "18px" }}>
-                        "Excellent combination from Olay. Totally effective "
-                      </p>
-                      <p style={{ color: "grey" }}>
-                        This combination of day and night creme is the best for
-                        my sensitive skin. I am 48 years old anf my skin looks
-                        and feels 10 years younger !! Thank you Nykaa ❤
-                      </p>
-                      <div style={{ display: "flex" }}>
-                        <button
-                          style={{
-                            padding: "0px 30px 0px 30px",
-                            fontSize: "20px",
-                            marginRight: "25px",
-                            border: "0.5px solid grey",
-                            color: "#FC2779",
-                            backgroundColor: "white",
-                            height: "50px",
-                            marginTop: "10px",
-                          }}
-                        >
-                          Helpful
-                        </button>
-                        <p style={{ color: "grey", fontSize: "18px" }}>
-                          8 people found this helpful
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="Reviews">
-                  {/* <h2 style={{ textAlign: "left", margin: "28px 0 18px 0" }}>
-                    Most Useful Review
-                  </h2> */}
-
-                  <div style={{ display: "flex", margin: "28px 0 0px 0" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        marginRight: "25px",
-                        width: "30%",
-                      }}
-                    >
-                      <img
-                        style={{
-                          width: "20%",
-                          height: "50px",
-                          marginTop: "10px",
-                        }}
-                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
-                      />
-                      <p
-                        style={{
-                          paddingLeft: "8px",
-                          color: "grey",
-                          fontSize: "18px",
-                          textAlign: "left",
-                        }}
-                      >
-                        gazal
-                      </p>
-                    </div>
-                    <div style={{ width: "70%", textAlign: "left" }}>
-                      <button
-                        style={{
-                          backgroundColor: "green",
-                          fontSize: "22px",
-                          color: "white",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        5 <span style={{ color: "white" }}>★</span>
-                      </button>
-                      <p style={{ fontSize: "18px" }}>
-                        "Excellent combination from Olay. Totally effective "
-                      </p>
-                      <p style={{ color: "grey" }}>
-                        This combination of day and night creme is the best for
-                        my sensitive skin. I am 48 years old anf my skin looks
-                        and feels 10 years younger !! Thank you Nykaa ❤
-                      </p>
-                      <div style={{ display: "flex" }}>
-                        <button
-                          style={{
-                            padding: "0px 30px 0px 30px",
-                            fontSize: "20px",
-                            marginRight: "25px",
-                            border: "0.5px solid grey",
-                            color: "#FC2779",
-                            backgroundColor: "white",
-                            height: "50px",
-                            marginTop: "10px",
-                          }}
-                        >
-                          Helpful
-                        </button>
-                        <p style={{ color: "grey", fontSize: "18px" }}>
-                          8 people found this helpful
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="Reviews">
-                  {/* <h2 style={{ textAlign: "left", margin: "28px 0 18px 0" }}>
-                    Most Useful Review
-                  </h2> */}
-
-                  <div style={{ display: "flex", margin: "28px 0 0px 0" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        marginRight: "25px",
-                        width: "30%",
-                      }}
-                    >
-                      <img
-                        style={{
-                          width: "20%",
-                          height: "50px",
-                          marginTop: "10px",
-                        }}
-                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
-                      />
-                      <p
-                        style={{
-                          paddingLeft: "8px",
-                          color: "grey",
-                          fontSize: "18px",
-                          textAlign: "left",
-                        }}
-                      >
-                        Anjali Agrawal
-                      </p>
-                    </div>
-                    <div style={{ width: "70%", textAlign: "left" }}>
-                      <button
-                        style={{
-                          backgroundColor: "green",
-                          fontSize: "22px",
-                          color: "white",
-                          borderRadius: "5px",
-                        }}
-                      >
-                        5 <span style={{ color: "white" }}>★</span>
-                      </button>
-                      <p style={{ fontSize: "18px" }}>
-                        "Excellent combination from Olay. Totally effective "
-                      </p>
-                      <p style={{ color: "grey" }}>
-                        This combination of day and night creme is the best for
-                        my sensitive skin. I am 48 years old anf my skin looks
-                        and feels 10 years younger !! Thank you Nykaa ❤
-                      </p>
-                      <div style={{ display: "flex" }}>
-                        <button
-                          style={{
-                            padding: "0px 30px 0px 30px",
-                            fontSize: "20px",
-                            marginRight: "25px",
-                            border: "0.5px solid grey",
-                            color: "#FC2779",
-                            backgroundColor: "white",
-                            height: "50px",
-                            marginTop: "10px",
-                          }}
-                        >
-                          Helpful
-                        </button>
-                        <p style={{ color: "grey", fontSize: "18px" }}>
-                          8 people found this helpful
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="Reviews">
-                  {/* <h2 style={{ textAlign: "left", margin: "28px 0 18px 0" }}>
-                    Most Useful Review
-                  </h2> */}
-
-                  <div style={{ display: "flex", margin: "28px 0 0px 0" }}>
-                    <div
-                      style={{
-                        display: "flex",
-                        marginRight: "25px",
-                        width: "30%",
-                      }}
-                    >
-                      <img
-                        style={{
-                          width: "20%",
-                          height: "50px",
-                          marginTop: "10px",
-                        }}
-                        src="https://images-static.nykaa.com/prod-review/default_profile_image.png"
-                      />
-                      <p
-                        style={{
-                          paddingLeft: "8px",
-                          color: "grey",
-                          fontSize: "18px",
-                          textAlign: "left",
+                          margin: "10px ",
                         }}
                       >
                         bharti agrawal
@@ -655,11 +796,18 @@ const Productdetails = () => {
                           fontSize: "22px",
                           color: "white",
                           borderRadius: "5px",
+                          padding: "5px 10px 5px 10px",
                         }}
                       >
                         5 <span style={{ color: "white" }}>★</span>
                       </button>
-                      <p style={{ fontSize: "18px" }}>
+                      <p
+                        style={{
+                          fontSize: "18px",
+                          marginBottom: "20px",
+                          marginTop: "20px",
+                        }}
+                      >
                         "Excellent combination from Olay. Totally effective "
                       </p>
                       <p style={{ color: "grey" }}>
@@ -667,7 +815,7 @@ const Productdetails = () => {
                         my sensitive skin. I am 48 years old anf my skin looks
                         and feels 10 years younger !! Thank you Nykaa ❤
                       </p>
-                      <div style={{ display: "flex" }}>
+                      <div style={{ display: "flex", marginTop: "10px" }}>
                         <button
                           style={{
                             padding: "0px 30px 0px 30px",
@@ -682,7 +830,13 @@ const Productdetails = () => {
                         >
                           Helpful
                         </button>
-                        <p style={{ color: "grey", fontSize: "18px" }}>
+                        <p
+                          style={{
+                            color: "grey",
+                            fontSize: "18px",
+                            paddingTop: "20px",
+                          }}
+                        >
                           8 people found this helpful
                         </p>
                       </div>
@@ -709,7 +863,7 @@ const Productdetails = () => {
           className="sideimage"
         >
           <img
-            style={{ width: "80%" }}
+            style={{ width: "80%", margin: "auto" }}
             src="https://images-static.nykaa.com/media/catalog/product/d/2/d22e139OLAYBND000098_1.jpg"
           />
           <p style={{ textAlign: "center", padding: "0 12px 0 12px" }}>
@@ -732,7 +886,7 @@ const Productdetails = () => {
               30% Off
             </span>
           </p>
-          <p>★★★★☆ </p>
+          <p style={{ textAlign: "center", marginBottom: "10px" }}>★★★★☆ </p>
           <button
             style={{
               width: "100%",

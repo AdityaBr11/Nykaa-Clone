@@ -1,7 +1,7 @@
 .main {
   display: flex;
   width: 100%;
-
+  margin-top: 150px;
   justify-content: center;
   /* border: 1px solid black; */
   height: auto;
@@ -23,6 +23,7 @@
   display: grid;
   padding-left: 30px;
   width: 65%;
+  padding-top: 0px;
 }
 
 .details {
@@ -30,6 +31,7 @@
   gap: 12px;
   justify-content: space-evenly;
   box-shadow: grey;
+  padding-top: 20px;
 }
 
 .innerdiv {
@@ -60,9 +62,10 @@
 
 .customer-image img {
   width: 8%;
-  height:auto;
+  height: auto;
   text-align: left;
   padding-right: 10px;
   padding-left: 0px;
   border: 1px solid grey;
+  border-radius: 0px;
 }
