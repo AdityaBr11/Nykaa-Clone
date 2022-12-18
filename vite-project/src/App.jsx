@@ -5,7 +5,12 @@ import Navbar from "./Components/Navbar";
 import AllRoutes from "./Components/Routes/AllRoutes";
 import Scroll from "./Components/Scroll";
 
+
 function App() {
+
+
+function App() {
+
   return (
     <div>
       <Navbar />
