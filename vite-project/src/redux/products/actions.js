@@ -63,14 +63,11 @@ const getProducts=(params) =>dispatch =>{
 }
 
 const addCarts=(payload) =>dispatch =>{
-    console.log('star1')
     dispatch(addCartReq())
-    console.log('end')
     return axios.post('https://nykaa-data-base.vercel.app/cart',payload).then((r)=>{
         dispatch(addCartSucess(r.data))
     }).catch(e=>{
         dispatch(addCartError())
-        console.log('error')
     })
 
 }

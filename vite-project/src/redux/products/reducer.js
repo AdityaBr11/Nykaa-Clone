@@ -4,7 +4,6 @@ import * as types from './actionType';
 const initialState={
     products:[],
     cart:[],
-    cartItem:[],
     isLoading:false,
     isError:false,
 }
@@ -61,7 +60,7 @@ const reducer=(oldState=initialState,action)=>{
             return{
                 ...oldState,
                 isLoading:false,
-                cartItem:payload,
+                cart:payload
             }
         }
         case types.GET_CART_ERROR:{

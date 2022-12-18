@@ -552,7 +552,7 @@ const Product = () => {
           </Accordion>
         </div>
 
-        <div id="item" >
+        <div id="item" className="py-3 h-auto" >
           {loading ? (
             <>
               {products.map((e) => (
@@ -583,8 +583,8 @@ const Product = () => {
                     <h2>( {el.rating} )</h2>
                   </div>
                   <div className="w-[100%] hover:animate-bounce cursor-pointer">
-                    <div id="addbag" className="">
-                      <div id="heart">
+                    <div id="addbag" className="h-24">
+                      <div id="heart" className="bg-white ">
                         <i class="fa fa-heart-o" aria-hidden="true"></i>
                       </div>
                       <div id="bag" onClick={()=>handleCart(el)}>

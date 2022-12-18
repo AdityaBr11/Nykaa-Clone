@@ -5,6 +5,7 @@ import Appliances from '../../Pages/Appliances'
 import Error from '../../Pages/Error'
 import Homepage from '../../Pages/Homepage'
 import Practice from '../../Pages/Practice'
+import Productdetails from '../../Pages/Productdetails'
 import SinglePractice from '../../Pages/SinglePractice'
 import { Skin } from '../../Pages/Skin'
 import CartTest from '../CartTest'
@@ -21,6 +22,7 @@ const AllRoutes = () => {
         <Route path='/skin' element={<Skin/>} />
         <Route path='/product' element={<Product/>} />
         <Route path='/practice/:id' element={<SinglePractice/>} />
+        <Route path='/product/:id' element={<Productdetails/>} />
         <Route path='/cart' element={<CartTest/>} />
 
         <Route
