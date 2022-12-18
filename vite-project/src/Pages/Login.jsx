@@ -1,4 +1,5 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
+import { useToast } from '@chakra-ui/react'
 import
 {
     Box,Heading,Input,Button,Text
@@ -8,14 +9,14 @@ var data=JSON.parse(localStorage.getItem("userData"));
 
 const Loginpage=() =>
 {
-    const [verfiy,setVerfiy]=useState([]);
+    const [verfiy,setVerfiy]=useState(false);
     const [input,setInput]=useState({
         email: "",
         password: "",
         phone: 0,
         name: ""
     });
-
+    const [notify,SetNotify]=useState("");
     const [login,setLogin]=useState({});
     const [sign,setSign]=useState([]);
     const [logindata,setLogindata]=useState({email: "",password: ""})
@@ -41,21 +42,7 @@ const Loginpage=() =>
         const {name,value}=e.target;
         setLogindata({...input,[name]: value})
     }
-    const handleInputChange=(e) =>
-    {
-
-        const {name,value}=e.target;
-        setInput({...input,[name]: value})
-        setInput("")
-    }
-    const sigin=(e) =>
-    {
-        e.preventDefault();
-        setSign([...sign,input])
-        localStorage.setItem("userData",JSON.stringify(sign))
-
-    }
-
+  
     const logout=() =>
     {
         localStorage.setItem("login",false)
@@ -71,11 +58,12 @@ const Loginpage=() =>
         {
             if(e.email===input1)
             {
-                setVerfiy([...verfiy,1])
+                setVerfiy([true])
 
             } else if(e.email!==input1)
             {
-                setVerfiy([])
+                setVerfiy(false)
+               
 
             }
         })
@@ -84,32 +72,28 @@ const Loginpage=() =>
     {
         setInput1(e.target.value)
     }
+    const toast=useToast();
     console.log(input1)
     console.log(input,sign)
     console.log(verfiy)
     return (
-        <Box mt={'150px'} mb={10} bgColor={'#f3f3f3'} p={10}>
+        <Box   bgColor={'#f3f3f3'} p={10}>
 
-
-
-            <Box>
-                <Box w={'26%'} m='auto' bgColor={'white'} p={10} justifyContent='center' alignItems={'center'} textAlign={'center'} >
-                <Heading mb={5}>LOGIN/REGISTER</Heading> <hr /> &nbsp;
-                    <Input type="email" bgColor={'#f3f3f3'} value={input1} onChange={checkData} />
-                    <Button onClick={Equal} bgColor="#d5418e" color={'white'} w='100%' m={'3rem 0'}>proceed</Button>
-                </Box>
-                {verfiy.length>0 ? <Box w={'26%'} m='auto' bgColor={'white'} p={10} justifyContent='center' alignItems={'center'} textAlign={'center'}>
-                    <Heading mb={5}>login</Heading>
+            <Box mt={'150px'}>
+                {verfiy? <Box w={'26%'} m='auto' bgColor={'white'} p={10} justifyContent='center' alignItems={'center'} textAlign={'center'}>
+                    <Heading mb={5} fontSize={18}>login</Heading>
                     <form>
-                        <Input type='email' name='email' bgColor={'#f3f3f3'} onChange={loginValue} />
+                        <Input type='email' name='email' placeholder='Enter Email Address' bgColor={'#f3f3f3'} onChange={loginValue}  isRequired />
                         &nbsp;
-                        <Input type='password' name='password' bgColor={'#f3f3f3'} onChange={loginValue} />
+                        <Input type='password' name='password' placeholder='Enter Password' bgColor={'#f3f3f3'} onChange={loginValue} isRequired />
                         <Button onClick={userlogin} bgColor="#d5418e" color={'white'} w='100%' m={'3rem 0'}>login</Button>
                     </form>
                 </Box>
-                    :<Box>
-                        <Text> register here</Text>
-                        </Box>
+                    : <Box w={'26%'} m='auto' bgColor={'white'} p={10} justifyContent='center' alignItems={'center'} textAlign={'center'} >
+                    <Heading mb={5} fontSize={18}>LOGIN/REGISTER</Heading> <hr /> &nbsp;
+                        <Input type="email" bgColor={'#f3f3f3'} placeholder='Enter Email Address' value={input1} onChange={checkData} />
+                        <Button onClick={Equal} bgColor="#d5418e" color={'white'} w='100%' m={'3rem 0'}>proceed</Button>
+                    </Box>
                     }
 
             </Box>

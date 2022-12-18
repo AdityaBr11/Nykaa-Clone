@@ -19,9 +19,9 @@ const Menus=({text,logout}) =>
 {
  
     return (
-        <Box pt={5}>
+        <Box pt={1}>
             <Menu isLazy>
-                <MenuButton>{text}</MenuButton>
+                <MenuButton display={'flex'} > &nbsp; {text}</MenuButton>
                 <MenuList>
                     {/* MenuItems are not rendered unless Menu is open */}
                     <MenuItem><span><HiClipboardList /></span> &nbsp; Orders</MenuItem>
