@@ -1,12 +1,12 @@
 
-import React from 'react'
-import {Navigate,Route,Routes} from 'react-router-dom'
-import Appliances from '../../Pages/Appliances'
-import Error from '../../Pages/Error'
-import Homepage from '../../Pages/Homepage'
-import Loginpage from '../../Pages/Login'
-import Register from '../../Pages/Register'
-import Signin from '../../Pages/Signin'
+import React from 'react';
+import {Navigate,Route,Routes} from 'react-router-dom';
+import Appliances from '../../Pages/Appliances';
+import Error from '../../Pages/Error';
+import Homepage from '../../Pages/Homepage';
+import Loginpage from '../../Pages/Login';
+import Register from '../../Pages/Register';
+
 
 const AllRoutes=() =>
 {
@@ -20,7 +20,7 @@ const AllRoutes=() =>
                 element={<Navigate to="/not-found" replace />} />
             <Route path='/login' element={<Loginpage />} />
             <Route path='/register' element={<Register />}/>
-            <Route path='/signin' element={<Signin/>}/>
+            
         </Routes>
     )
 };

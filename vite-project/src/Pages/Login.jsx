@@ -4,7 +4,8 @@ import
 {
     Box,Heading,Input,Button,Text
 } from '@chakra-ui/react';
-import {CloseIcon} from '@chakra-ui/icons';
+//import {CloseIcon} from '@chakra-ui/icons';
+import { Link } from 'react-router-dom';
 var data=JSON.parse(localStorage.getItem("userData"));
 
 const Loginpage=() =>
@@ -93,6 +94,8 @@ const Loginpage=() =>
                     <Heading mb={5} fontSize={18}>LOGIN/REGISTER</Heading> <hr /> &nbsp;
                         <Input type="email" bgColor={'#f3f3f3'} placeholder='Enter Email Address' value={input1} onChange={checkData} />
                         <Button onClick={Equal} bgColor="#d5418e" color={'white'} w='100%' m={'3rem 0'}>proceed</Button>
+                        <br />
+                        <Text>If don't have Account with us  <Link to='/register' style={{color:'#d5418e' }}>Click Here</Link></Text>
                     </Box>
                     }
 
