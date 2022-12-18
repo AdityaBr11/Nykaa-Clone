@@ -9,7 +9,7 @@ import Scroll from "./Components/Scroll";
 function App() {
 
 
-function App() {
+
 
   return (
     <div>
@@ -19,6 +19,7 @@ function App() {
       <Scroll />
     </div>
   );
+
 }
 
 export default App;
