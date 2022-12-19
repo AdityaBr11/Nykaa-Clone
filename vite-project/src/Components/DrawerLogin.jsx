@@ -20,26 +20,25 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
     const cartItem=useSelector(store=>store.cart)
     const dispatch=useDispatch()
     const [totalPrice,setTotalPrice]=useState(0)
+
+    // console.log('carttttt',cartItem)
   
     useEffect(()=>{
     
         axios.get('https://nykaa-data-base.vercel.app/cart').then((res)=>{
-            setData(res.data);
-    
-            const sum = data.reduce(function (result, item) {
-                return result + item.price;
-              }, 0);     
-              setTotalPrice(sum)     
+            setData(res.data);    
           })
           dispatch(getCartItem())
-
-      
-    },[dispatch])
-    console.log("x",data)
-
+    },[])
+    // console.log("x",totalPrice)
+    const sum = data.reduce((result, item)=> {
+        return result + item.price;
+      }, 0);
+      const tp=sum 
+      console.log('total',tp);
+    
     const handleDel=(id)=>{
         dispatch(deleteProducts(id)).then(() => dispatch(getCartItem()));
-
     }
 
 
@@ -82,7 +81,7 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                                 <Box display={'flex'} gap={2} w='100%' borderRadius={5} p='1px' mt={3}>
                                                     <Image w={20} src={e.image} alt='product_cart' />
                                                     <Text fontSize={14}><Center>{e.title}</Center></Text>
-                                                    <Text onClick={()=>handleDel((e.id))} color={'#d5418e'} p={4} fontSize={25}><RiDeleteBin6Line /></Text>
+                                                    <Text onClick={()=>handleDel((e.id))} color={'#d5418e'} p={4} fontSize={25} className="cursor-pointer"><RiDeleteBin6Line /></Text>
                                                 </Box>
                                                 <hr />
                                                 <Box display={'flex'} justifyContent={'space-between'}>
@@ -122,27 +121,27 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                                 <Box p={5}>
                                                     <Box display={'flex'} justifyContent='space-between'>
                                                         <Text>Bag MRP ({quantity} items)</Text>
-                                                        <Text>₹{ price*Number(quantity)}</Text>
+                                                        <Text>₹{ tp*Number(quantity)}</Text>
                                                     </Box>
                                                     <Box display={'flex'} justifyContent='space-between' m={'10px 0'}>
                                                         <Text>Bag Dicount</Text>
-                                                        <Text>₹{discount*Number(quantity)}</Text>
+                                                        <Text className='line-through text-gray-500'>₹{discount*Number(quantity)}</Text>
                                                     </Box>
                                                     <Box display={'flex'} justifyContent='space-between'>
                                                         <Text>Shipping</Text>
-                                                        <Text>₹{shipping}</Text>
+                                                        <Text className='line-through'>₹40</Text>
                                                     </Box>
                                                 </Box>
                                                 <Box display={'flex'} justifyContent='space-between'>
                                                     <Text fontWeight={700}>You Pay</Text>
-                                                    <Text fontWeight={700}>₹{(price*Number(quantity)+shipping)-discount*Number(quantity)}</Text>
+                                                    <Text fontWeight={700}>₹{tp}</Text>
                                                 </Box>
                                             </Box>
                                         </DrawerBody>
                                         <hr />
                                         <DrawerFooter justifyContent={'space-between'}>
                                             <Box>
-                                                <Heading fontSize={17}>₹964</Heading>
+                                                <Heading fontSize={17}>₹{tp}</Heading>
                                                 <Box display={'flex'} gap={1}><Text fontSize={12} >Grand Total </Text> <IoIosInformationCircleOutline fontSize={15} color='#ff8fba' /></Box>
                                             </Box>
                                             <Button colorScheme='pink' variant='solid' rightIcon={<FaArrowRight />}>

@@ -12,7 +12,6 @@ import { store } from "./redux/store";
 //122806122719-hsoe2eocu4ilnidqk645ui83d5fiaus8.apps.googleusercontent.com
 const root=ReactDOM.createRoot(document.getElementById("root"))
 root.render(
-  <React.StrictMode>
     <GoogleOAuthProvider clientId="122806122719-hsoe2eocu4ilnidqk645ui83d5fiaus8.apps.googleusercontent.com">
     <ChakraProvider>
       <BrowserRouter>
@@ -22,5 +21,4 @@ root.render(
       </BrowserRouter>
     </ChakraProvider>
     </GoogleOAuthProvider>
-  </React.StrictMode>
 );

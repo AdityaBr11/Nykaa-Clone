@@ -75,6 +75,7 @@ const getCartItem=() =>dispatch =>{
     dispatch(getCartReq())
     return axios.get('https://nykaa-data-base.vercel.app/cart').then((r)=>{
         dispatch(getCartSucess(r.data))
+        console.log('piyush',r.data)
     }).catch(e=>{
         dispatch(getCartError())
     })

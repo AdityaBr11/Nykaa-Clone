@@ -111,7 +111,7 @@ const Navbar=() =>
         setDetail([]);
         Setverfiy(false)
     }
-    console.log(detial,"hogye")
+    console.log(detial,"done")
     return (
         <Box>
 
