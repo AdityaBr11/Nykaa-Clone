@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Productdetails.css";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import {MdOutlineProductionQuantityLimits} from 'react-icons/md'
+import {TbTruckReturn} from 'react-icons/tb'
+import {CiLocationOn} from 'react-icons/ci'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   Tabs,
   TabList,
@@ -12,6 +17,9 @@ import {
 } from "@chakra-ui/react";
 import { Collapse, Button, Image, Box } from "@chakra-ui/react";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
+import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { addCarts, getProducts } from "../redux/products/actions";
 
 const best = [
   {
@@ -81,6 +89,33 @@ const best = [
 ];
 
 const Productdetails = () => {
+
+  const {id}=useParams()
+  const productData=useSelector(store=>store.products)
+  const dispatch=useDispatch()
+  const cartItems=useSelector(store=>store.cart);
+
+  const [currentProduct,setCurrentProduct]=useState({})
+  useEffect(()=>{
+    dispatch(getProducts())
+    const singleProduct=productData.find(iteam=>iteam.id===Number(id));
+    singleProduct && setCurrentProduct(singleProduct)
+  },[id])
+  console.log(currentProduct);
+
+  const handleCart = (cartIteam) => {
+    dispatch(addCarts(cartIteam))
+    toast.success("Added to Cart", {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+  };
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 3000 },
@@ -104,6 +139,7 @@ const Productdetails = () => {
   const handleToggle = () => setShow(!show);
   return (
     <div style={{ width: "68%", margin: "auto" }}>
+      <ToastContainer/>
       <div className="main">
         <div className="subdiv1">
           <div style={{ display: "flex", paddingRight: "0px" }}>
@@ -119,7 +155,7 @@ const Productdetails = () => {
                 width: "70%",
                 paddingLeft: "40px",
               }}
-              src="https://images-static.nykaa.com/media/catalog/product/d/2/d22e139OLAYBND000098_1.jpg"
+              src={currentProduct.image}
             />
           </div>
         </div>
@@ -134,7 +170,7 @@ const Productdetails = () => {
                 marginBottom: "10px",
               }}
             >
-              Olay Total Effects Night & Day Cream Combo
+              {currentProduct.title}
             </h1>
             <p
               style={{
@@ -148,10 +184,10 @@ const Productdetails = () => {
             </p>
             <p style={{ textAlign: "left", marginBottom: "10px" }}>
               <span style={{ color: "grey" }}>
-                MRP:{"  "} <strike> ₹1798</strike>
+                MRP:{"  "} <strike> {currentProduct.preprice}</strike>
               </span>
               {"  "}
-              <span style={{ fontWeight: 600, fontSize: "20px" }}>₹1259</span>
+              <span style={{ fontWeight: 600, fontSize: "20px" }}>₹{currentProduct.price}</span>
               {"  "}
               <span
                 style={{
@@ -189,6 +225,7 @@ const Productdetails = () => {
                     justifyContent: "flext-start",
                     marginTop: "30px",
                   }}
+                  onClick={()=>handleCart({currentProduct})}
                 >
                   Add to Bag
                 </button>
@@ -202,30 +239,34 @@ const Productdetails = () => {
                     color: "grey",
                     fontWeight: "500",
                     paddingTop: "20px",
+                    display:"flex",justifyContent:"center",alignItems:"center",gap:"3px"
                   }}
                 >
-                  Delivery Options
+                 <span><CiLocationOn/></span><span>Delivery Options</span>
                 </p>
                 <div style={{ marginBottom: "30px" }}>
                   {" "}
-                  <input
+                  <div className="flex justify-center items-center gap-1 mt-5 border border-gray-400 px-2">
+                  <input className="outline-none"
                     style={{
                       width: "100%",
-                      height: "40px",
+                      height: "35px",
                       fontSize: "16px",
-                      border: "1px solid grey",
-                      marginTop: "20px",
+                      border: "0px solid grey",
+                      // marginTop: "20px",
                     }}
                     type="text"
                     placeholder="Enter Pincode"
                   />
+                  <p className="text-pink-500 cursor-pointer">check</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div className="details">
-            <div>100% Genuine Products</div>
-            <div>Easy Return Policy</div>
+            <div className="flex gap-1 justify-center items-center"><span><MdOutlineProductionQuantityLimits/></span>   <span>100% Genuine Products</span></div>
+            <div className="flex justify-center items-center gap-1"><span><TbTruckReturn/> </span><span>Easy Return Policy</span></div>
             <div>Sold by :NYKAA E RETAIL PR</div>
           </div>
         </div>

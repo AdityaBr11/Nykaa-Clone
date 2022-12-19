@@ -563,7 +563,7 @@ const Product = () => {
             <>
               {products.map((el) => (
                 <div key={el.id} className="h-auto shadow-xl" >
-                  <Link to={`/practice/${el.id}`}>
+                  <Link to={`/product/${el.id}`}>
                     <img src={el.image} alt="" />
                   </Link>
                   <h2 className="font-semibold text-center">{el.title}</h2>

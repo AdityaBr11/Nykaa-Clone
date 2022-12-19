@@ -22,8 +22,9 @@ const AllRoutes = () => {
         <Route path='/makeup' element={<Makeup/>} />
         <Route path='/skin' element={<Skin/>} />
         <Route path='/product' element={<Product/>} />
-        <Route path='/practice/:id' element={<SinglePractice/>} />
+        {/* <Route path='/practice/:id' element={<SinglePractice/>} /> */}
         <Route path='/product/:id' element={<Productdetails/>} />
+
         <Route path='/cart' element={<CartTest/>} />
 
         <Route

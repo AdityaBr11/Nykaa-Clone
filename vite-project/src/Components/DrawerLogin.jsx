@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
     Drawer,
     DrawerBody,
@@ -11,9 +11,38 @@ import {BsArrowLeft} from "react-icons/bs";
 import {RiDeleteBin6Line,RiCoupon2Line} from "react-icons/ri";
 import {FaArrowRight} from "react-icons/fa";
 import {IoIosInformationCircleOutline} from "react-icons/io"
+import { useDispatch, useSelector } from 'react-redux';
+import axios from 'axios';
+import { deleteProducts, getCartItem } from '../redux/products/actions';
 
-const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,shipping}) =>
-{
+const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,shipping}) =>{
+    const [data,setData]=useState([])
+    const cartItem=useSelector(store=>store.cart)
+    const dispatch=useDispatch()
+    const [totalPrice,setTotalPrice]=useState(0)
+  
+    useEffect(()=>{
+    
+        axios.get('https://nykaa-data-base.vercel.app/cart').then((res)=>{
+            setData(res.data);
+    
+            const sum = data.reduce(function (result, item) {
+                return result + item.price;
+              }, 0);     
+              setTotalPrice(sum)     
+          })
+          dispatch(getCartItem())
+
+      
+    },[dispatch])
+    console.log("x",data)
+
+    const handleDel=(id)=>{
+        dispatch(deleteProducts(id)).then(() => dispatch(getCartItem()));
+
+    }
+
+
     const { isOpen, onOpen, onClose } = useDisclosure()
     const btnRef = React.useRef()
     return (
@@ -29,7 +58,6 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                     finalFocusRef={btnRef}
                                     size={'sm'}
         >
-            
                                     <DrawerOverlay />
                                     <DrawerContent>
 
@@ -37,7 +65,7 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                             <BsArrowLeft fontSize={20} fontWeight={500} onClick={onClose} />
                                         </Text>
                                             Bag <Text fontWeight={100} ml='10px' fontSize={10} mt='10px'>
-                                                {quantity} items
+                                                {data.length} items
                                             </Text>
                                         </DrawerHeader>
                                         <hr />
@@ -46,11 +74,15 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                                 <Text fontSize={14}>2000 Reward Points on new registration</Text>
                                                 <Button w={'100%'} h={8} bg={'transparent'} border={'1px solid #d5418e'} color='#d5418e' m={'10px 0'} fontSize={15} _hover={{bg: "transparent"}}><Link to='/login'>Login/Register</Link> </Button>
                                             </Box>}
+                                            {data.map((e)=>(
+
+                                            
                                             <Box border={"1px solid lightgray"} w='100%' borderRadius={5} p='1px' mt={3}>
+
                                                 <Box display={'flex'} gap={2} w='100%' borderRadius={5} p='1px' mt={3}>
-                                                    <Image w={20} src='https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/a/6/a6bf37c8906087770671aw__1_.jpg' alt='product_cart' />
-                                                    <Text fontSize={14}><Center>Mamaearth Ubtan Face Wash With Turmeric & Saffron For Tan</Center></Text>
-                                                    <Text color={'#d5418e'} p={4} fontSize={25}><RiDeleteBin6Line /></Text>
+                                                    <Image w={20} src={e.image} alt='product_cart' />
+                                                    <Text fontSize={14}><Center>{e.title}</Center></Text>
+                                                    <Text onClick={()=>handleDel((e.id))} color={'#d5418e'} p={4} fontSize={25}><RiDeleteBin6Line /></Text>
                                                 </Box>
                                                 <hr />
                                                 <Box display={'flex'} justifyContent={'space-between'}>
@@ -65,11 +97,12 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
 
                                                     </Select>
                                                     <Box display={'flex'}>
-                                                        <Text p={'8px 8px'} fontWeight={500} textDecoration='line-through' color={'lightgray'}>₹{Price}</Text>
-                                                        <Text p={'8px 8px'} fontWeight={500}>₹{offerPrice}</Text>
+                                                        <Text p={'8px 8px'} fontWeight={500} textDecoration='line-through' color={'lightgray'}>{e.preprice}</Text>
+                                                        <Text p={'8px 8px'} fontWeight={500}>₹{e.price}</Text>
                                                     </Box>
                                                 </Box>
                                             </Box>
+                                            ))}
                                             <Box border={"1px solid lightgray"} w='100%' borderRadius={5} p='5px' gap={5} mt={3} display={'flex'} justifyContent={'space-between'}>
                                                 <Text m={'9px 1px 9px 12px'} fontSize={28}>
                                                     <RiCoupon2Line fill='#d5418e' />
@@ -89,7 +122,7 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                                 <Box p={5}>
                                                     <Box display={'flex'} justifyContent='space-between'>
                                                         <Text>Bag MRP ({quantity} items)</Text>
-                                                        <Text>₹{price*Number(quantity)}</Text>
+                                                        <Text>₹{ price*Number(quantity)}</Text>
                                                     </Box>
                                                     <Box display={'flex'} justifyContent='space-between' m={'10px 0'}>
                                                         <Text>Bag Dicount</Text>
@@ -109,7 +142,7 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                         <hr />
                                         <DrawerFooter justifyContent={'space-between'}>
                                             <Box>
-                                                <Heading fontSize={17}>₹{(price*Number(quantity)+shipping)-discount*Number(quantity)}</Heading>
+                                                <Heading fontSize={17}>₹964</Heading>
                                                 <Box display={'flex'} gap={1}><Text fontSize={12} >Grand Total </Text> <IoIosInformationCircleOutline fontSize={15} color='#ff8fba' /></Box>
                                             </Box>
                                             <Button colorScheme='pink' variant='solid' rightIcon={<FaArrowRight />}>

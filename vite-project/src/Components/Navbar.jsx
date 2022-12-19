@@ -456,7 +456,7 @@ const Navbar=() =>
                             <ListItem>
 
                                 <Link to="/makeup">
-                                    <div className="d"  >
+                                    <Box className="d"  >
 
                                         <Button className="d-btn">Makeup</Button>
                                         <Box className="d-content b-content">
@@ -560,9 +560,8 @@ const Navbar=() =>
                                 </Link>
                             </ListItem>
                             <ListItem>
-
                                 <Link to="/skin">
-                                    <div className="d">
+                                    <Box className="d">
 
                                         <Button className="d-btn">Skin</Button>
                                         <Box className="d-content">
@@ -722,7 +721,7 @@ const Navbar=() =>
                                     </Box>
                                 </Link>
                             </ListItem>
-                            <ListItem><Link to="#">
+                            <ListItem><Link to="/appliances">
                                 <Box className="d">
                                     <Button className="d-btn">Appliances</Button>
                                     <Box className="d-content" >

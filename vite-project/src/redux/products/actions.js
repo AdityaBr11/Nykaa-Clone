@@ -81,4 +81,37 @@ const getCartItem=() =>dispatch =>{
 }
 
 
-export {getProducts,addCarts,getCartItem}
+
+const deleteProductRequest = () => {
+    return {
+        type: types.DELETE_PRODUCT_REQUEST
+    }
+}
+const deleteProductSuccess = (payload) => {
+
+    return {
+        type: types.DELETE_PRODUCT_SUCCESS,
+        payload
+    }
+}
+const deleteProductFailure = () => {
+    return {
+        type: types.DELETE_PRODUCT_FAILURE,
+
+    }
+}
+const deleteProducts = (id) => (dispatch) => {
+    dispatch(deleteProductRequest())
+    return axios
+        .delete(`https://nykaa-data-base.vercel.app/cart/${id}`)
+        .then((result) => {
+            dispatch(deleteProductSuccess(result.data))
+
+        })
+        .catch((error) => {
+            dispatch(deleteProductFailure())
+        })
+}
+
+
+export {getProducts,addCarts,getCartItem,deleteProducts}

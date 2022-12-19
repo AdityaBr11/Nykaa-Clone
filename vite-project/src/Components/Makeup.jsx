@@ -1,6 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { Link } from "react-router-dom";
 import "../App.css";
 import "./makeup.css"
 const Makeup = () => {
@@ -87,6 +88,7 @@ const Makeup = () => {
           </div>
         </Carousel>
       </div>
+      <Link to="/product">
       <div id="brand">
         <h1>BRANDS YOU WILL LOVE</h1>
         <div>
@@ -101,6 +103,7 @@ const Makeup = () => {
           }
         </div>
       </div>
+      </Link>
       <div id="category">
           <h1>SHOP BY CATEGORY</h1>
           <div>
