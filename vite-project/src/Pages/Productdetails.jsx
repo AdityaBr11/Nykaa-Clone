@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import { Collapse, Button, Image, Box } from "@chakra-ui/react";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { addCarts, getProducts } from "../redux/products/actions";
 
@@ -89,18 +89,26 @@ const best = [
 ];
 
 const Productdetails = () => {
+  
+
 
   const {id}=useParams()
   const productData=useSelector(store=>store.products)
   const dispatch=useDispatch()
   const cartItems=useSelector(store=>store.cart);
+  const location = useLocation()
+  const myparam=Number(location.pathname.split("/")[2]);
+  const [urlparm,setUrlparm]=useState(id)
 
   const [currentProduct,setCurrentProduct]=useState({})
   useEffect(()=>{
+    setUrlparm(myparam)
     dispatch(getProducts())
-    const singleProduct=productData.find(iteam=>iteam.id===Number(id));
+    const singleProduct=productData.find(iteam=>iteam.id===Number(urlparm));
     singleProduct && setCurrentProduct(singleProduct)
-  },[id])
+    
+
+  },[urlparm])
   console.log(currentProduct);
 
   const handleCart = (cartIteam) => {

@@ -120,7 +120,7 @@ const DrawerLogin=({verfiy,quantity,handleClick,Price,offerPrice,price,discount,
                                                 </Text>
                                                 <Box p={5}>
                                                     <Box display={'flex'} justifyContent='space-between'>
-                                                        <Text>Bag MRP ({quantity} items)</Text>
+                                                        <Text>Bag MRP ({data.length} items)</Text>
                                                         <Text>₹{ tp*Number(quantity)}</Text>
                                                     </Box>
                                                     <Box display={'flex'} justifyContent='space-between' m={'10px 0'}>

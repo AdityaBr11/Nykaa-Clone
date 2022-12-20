@@ -77,6 +77,7 @@ const Navbar=() =>
     const [count,setCount]=useState(0);
     const [price,setPrice]=useState(Price)
     const [quantity,setQuantity]=useState(1);
+    const [data,setData]=useState([])
 
     const handleClick=(e) =>
     {
@@ -118,7 +119,7 @@ const Navbar=() =>
             <Box width={'full'} h={10} backgroundImage={`url(https://adn-static1.nykaa.com/media/wysiwyg/2022/cms/banner/top_strip_16dec22.jpg)`} position={'fixed'} top='0' className='z-20'>
 
                 <Box display={'flex'} w={{base: '100%',md: '80%',lg: '80%'}} m={'auto'} justifyContent={{base: 'space-between',md: 'none'}} Text={2} alignItems={'center'} textAlign='center'  >
-                    <Link to="#" rel='noopener noreferrer'><Text fontWeight={{base: 650}} fontSize={{base: '11.8px',md: '14px',lg: '18px'}} _hover={{color: 'white'}} color='white'>BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals</Text></Link>
+                    <Link to="#" rel='noopener noreferrer'><Text fontWeight={{base: 650}} fontSize={{base: '11.8px',md: '14px',lg: '18px'}} _hover={{color: 'white'}} color='white' className='animate-pulse duration-75'>BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals</Text></Link>
                     <Menus />
                     <Box display={'flex'}> {
                         Nav1List.map((e) =>
