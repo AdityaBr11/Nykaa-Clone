@@ -1,7 +1,7 @@
 # Nykaa-Clone
 Nykaa Clone
 
-<h1 align="center">Sephora.com Clone</h1>
+<h1 align="center">Nykaa.com Clone</h1>
 
 <br />
 
