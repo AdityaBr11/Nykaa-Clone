@@ -37,6 +37,9 @@
 </p>
 
 Nykaa.com Clone is ReactJS e-commerce web application that allows you to buy cosmetics products online with effortable prices. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
+
+## Duration 
+We made this project within the 4 days
 <br />
 
 ## Screens 
@@ -55,6 +58,8 @@ Nykaa.com Clone is ReactJS e-commerce web application that allows you to buy cos
 - Cart Add and Remove Items 
 - Cart Update Quantities 
 <br />
+
+
 ## Glimpses of Nykaa-Clone :
 <table>
   <tr>
