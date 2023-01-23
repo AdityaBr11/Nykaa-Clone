@@ -150,7 +150,6 @@ If you want to contact us, you can reach me through below handles. <br />
 [![linkedin](https://img.shields.io/badge/Aditya_Anand-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/aditya-anand-2b795a239/)
 [![GitHub](https://img.shields.io/badge/Aditya_Anand-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/AdityaBr11/)
 
-<br/>
 [![linkedin](https://img.shields.io/badge/Rashmi_Gautam-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rashmi-gautam16/)
 [![GitHub](https://img.shields.io/badge/Rashmi_Gautam-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Rashmigautam16)
 
