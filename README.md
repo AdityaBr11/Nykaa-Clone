@@ -1,5 +1,3 @@
-# Nykaa-Clone
-Nykaa Clone
 
 <h1 align="center">Nykaa.com Clone</h1>
 
@@ -37,7 +35,7 @@ Nykaa Clone
   <a href="#Demo">View Demo</a> &#10023;
   <a href="#Getting-Started">Getting Started</a> &#10023; 
   <a href="#Install">Installing</a> &#10023;
-  <a href="#Contact">Author</a> &#10023;
+  <a href="#Contact us">Author</a> &#10023;
 </p>
 
 
@@ -153,6 +151,11 @@ If you want to contact us, you can reach me through below handles. <br />
 [![linkedin](https://img.shields.io/badge/Rashmi_Gautam-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rashmi-gautam16/)
 [![GitHub](https://img.shields.io/badge/Rashmi_Gautam-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Rashmigautam16)
 
+[![linkedin](https://img.shields.io/badge/varinder-brar-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/varinder-brar/)
+[![GitHub](https://img.shields.io/badge/varinder-brar-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/Brar21)
+
+[![linkedin](https://img.shields.io/badge/Santosh-Sharma-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://github.com/SantoshSharma09)
+[![GitHub](https://img.shields.io/badge/Santosh-Sharma-0077B5?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/SantoshSharma09)
 
 
 
