@@ -1,6 +1,5 @@
 
 <h1 align="center">Nykaa.com Clone</h1>
-
 <br />
 
 <h2 align="center">🖥️ Tech Stack</h2>
@@ -29,17 +28,15 @@
 
 <h3 align="center"><a href="https://superb-semifreddo-4541c0.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 <br />
-
 <p align="center">
   <br />&#10023;
   <a href="#Demo">View Demo</a> &#10023;
   <a href="#Getting-Started">Getting Started</a> &#10023; 
   <a href="#Install">Installing</a> &#10023;
-  <a href="#Contact us">Author</a> &#10023;
+  <a href="#Contact Us">Author</a> &#10023;
 </p>
 
-
-Sephora.com Clone is ReactJS e-commerce web application that allows you to buy cosmetics products online with effortable prices. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
+Nykaa.com Clone is ReactJS e-commerce web application that allows you to buy cosmetics products online with effortable prices. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
 <br />
 
 ## Screens 
@@ -57,11 +54,7 @@ Sephora.com Clone is ReactJS e-commerce web application that allows you to buy c
 - My Orders Section for details of all ordered item
 - Cart Add and Remove Items 
 - Cart Update Quantities 
-
-
 <br />
-
-
 ## Glimpses of Nykaa-Clone :
 <table>
   <tr>
@@ -106,10 +99,10 @@ This project was built using React, Chakra UI, HTML, CSS, JavaScript, Rest API,R
 
 
 # create-vite
-##With NPM:
+## With NPM:
 
 $ npm create vite@latest
-##With Yarn:
+## With Yarn:
 
 $ yarn create vite
 With PNPM:
@@ -139,8 +132,6 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 - Visual Studio Code
 
 <br />
-
-
 
 ## Contact Us
 
