@@ -20,7 +20,7 @@ import {
 } from "@chakra-ui/react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts,addCarts } from "../redux/products/actions";
+import { getProducts,addCarts, getCartItem } from "../redux/products/actions";
 import Skelton from "./Skelton";
 
 
@@ -32,24 +32,19 @@ const Product = () => {
   const initialCategory = SearchParams.getAll("category");
   // console.log("initialCategory",initialCategory);
   const initialSort = SearchParams.getAll("sort");
-
   const [category, setCategory] = useState(initialCategory || []);
-
   const [sort, setSortBy] = useState(initialSort[0] || "");
-
   const [page, setPage] = useState(1);
-  const cartItems=useSelector(store=>store.cart);
-  console.log("cartItems",cartItems)
-  console.log(location);
+  // console.log(location);
 
-  const products = useSelector((store) => store.products);
-  const loading = useSelector((store) => store.isLoading);
+  const products = useSelector((store) => store.productsReducer.products);
+  const loading = useSelector((store) => store.productsReducer.isLoading);
+  const cartItem = useSelector((store) => store.productsReducer.cart);
   const dispatch = useDispatch();
 
   const handleSort = (e) => {
     setSortBy(e.target.value);
   };
-
   const handleCatChange = (e) => {
     //check if the data is present in the category
     const newCategory = [...category];
@@ -62,13 +57,14 @@ const Product = () => {
     }
     setCategory(newCategory);
   };
-  console.log(category);
+  // console.log(category);
 
-  console.log(page);
+  // console.log(page);
 
 
   const handleCart = (cartIteam) => {
     dispatch(addCarts(cartIteam))
+    .then(()=>
     toast.success("Added to Cart", {
       position: "top-center",
       autoClose: 5000,
@@ -77,7 +73,8 @@ const Product = () => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-    });
+    }));
+    dispatch(dispatch(getCartItem()))
   };
 
 
@@ -85,9 +82,7 @@ const Product = () => {
     //if the category changes then update the value in the url search params.
     let param = {};
     param.category = category;
-
     sort && (param.sort = sort);
-
     setSearchParams(param);
     ///
     if (location || products.length === 0) {
@@ -102,6 +97,7 @@ const Product = () => {
         },
       };
       dispatch(getProducts(getProductParam));
+      dispatch(getCartItem())
     }
   }, [
     products.length,
@@ -112,7 +108,7 @@ const Product = () => {
     sort,
     page,
   ]);
-  console.log(products);
+  // console.log(products);
 
   const responsive = {
     superLargeDesktop: {
@@ -164,7 +160,7 @@ const Product = () => {
               alt=""
             />
           </div>
-          <div className="">
+          <div>
             <img
               className="w-[100%] shadow-md"
               src="https://images-static.nykaa.com/uploads/b30dba91-33c3-4fd0-8b35-6aa9e9a54374.jpg?tr=w-1200,cm-pad_resize"
@@ -555,8 +551,8 @@ const Product = () => {
         <div id="item" className="py-3 h-auto" >
           {loading ? (
             <>
-              {products.map((e) => (
-                <Skelton />
+              {products.map((e,i) => (
+                <Skelton key={i} />
               ))}
             </>
           ) : (
@@ -575,17 +571,17 @@ const Product = () => {
                     <p className="dis">| {el.discount}</p>
                   </div>
                   <div id="star">
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star" aria-hidden="true"></i>
-                    <i class="fa fa-star-o" aria-hidden="true"></i>{" "}
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star" aria-hidden="true"></i>
+                    <i className="fa fa-star-o" aria-hidden="true"></i>{" "}
                     <h2>( {el.rating} )</h2>
                   </div>
                   <div className="w-[100%] hover:animate-bounce cursor-pointer">
                     <div id="addbag" className="h-24">
                       <div id="heart" className="bg-white ">
-                        <i class="fa fa-heart-o" aria-hidden="true"></i>
+                        <i className="fa fa-heart-o" aria-hidden="true"></i>
                       </div>
                       <div id="bag" onClick={()=>handleCart(el)}>
                         Add to bag

@@ -17,6 +17,24 @@ const getProductsError=()=>{
         type:types.GET_PRODUCTS_ERROR,
     }
 }
+//for single product
+const getSingleProductsReq=()=>{
+    return{
+        type:types.GET_SINGLE_PRODUCTS_REQUEST,
+    }
+}
+const getSingleProductsSucess=(payload)=>{
+    return{
+        type:types.GET_SINGLE_PRODUCTS_SUCESS,
+        payload
+    }
+}
+const getSingleProductsError=()=>{
+    return{
+        type:types.GET_SINGLE_PRODUCTS_ERROR,
+    }
+}
+
 const addCartReq=()=>{
     return{
         type:types.ADD_CART_REQ,
@@ -36,49 +54,60 @@ const addCartError=()=>{
 
 const getCartReq=()=>{
     return{
-        type:types.GET_PRODUCTS_REQUEST,
+        type:types.GET_CART_REQ,
     }
 }
 const getCartSucess=(payload)=>{
     return{
-        type:types.GET_PRODUCTS_SUCESS,
+        type:types.GET_CART_SUCESS,
         payload
     }
 }
 const getCartError=()=>{
     return{
-        type:types.GET_PRODUCTS_ERROR,
+        type:types.GET_CART_ERROR,
+    }
+}
+const getProducts=(params) =>async dispatch =>{
+    dispatch(getProductsReq())
+    try {
+        const r = await axios.get('https://nykaa-data-base.vercel.app/product', params);
+        dispatch(getProductsSucess(r.data));
+    } catch (e) {
+        dispatch(getProductsError());
     }
 }
 
-
-
-const getProducts=(params) =>dispatch =>{
-    dispatch(getProductsReq())
-    return axios.get('https://nykaa-data-base.vercel.app/product',params).then((r)=>{
-        dispatch(getProductsSucess(r.data))
-    }).catch(e=>{
-        dispatch(getProductsError())
-    })
+//for single products
+const getSingleProduct=(id)=>async (dispatch)=>{
+    try{
+        dispatch(getSingleProductsReq())
+        const r=await axios.get(`https://nykaa-data-base.vercel.app/product/${id}`)
+        dispatch(getSingleProductsSucess(r.data))
+    }catch(err){
+        dispatch(getSingleProductsError())
+    }
 }
 
-const addCarts=(payload) =>dispatch =>{
+const addCarts=(payload) =>async (dispatch) =>{
     dispatch(addCartReq())
-    return axios.post('https://nykaa-data-base.vercel.app/cart',payload).then((r)=>{
-        dispatch(addCartSucess(r.data))
-    }).catch(e=>{
-        dispatch(addCartError())
-    })
+    try {
+        const r = await axios.post('https://nykaa-data-base.vercel.app/cart', payload);
+        dispatch(addCartSucess(r.data));
+    } catch (e) {
+        dispatch(addCartError());
+    }
 
 }
-const getCartItem=() =>dispatch =>{
+const getCartItem=() =>async dispatch =>{
     dispatch(getCartReq())
-    return axios.get('https://nykaa-data-base.vercel.app/cart').then((r)=>{
-        dispatch(getCartSucess(r.data))
-        console.log('piyush',r.data)
-    }).catch(e=>{
-        dispatch(getCartError())
-    })
+    try {
+        const r = await axios.get('https://nykaa-data-base.vercel.app/cart');
+        dispatch(getCartSucess(r.data));
+        console.log('CART-ACTION', r.data);
+    } catch (e) {
+        dispatch(getCartError());
+    }
 }
 
 
@@ -115,4 +144,4 @@ const deleteProducts = (id) => (dispatch) => {
 }
 
 
-export {getProducts,addCarts,getCartItem,deleteProducts}
+export {getProducts,addCarts,getCartItem,deleteProducts,getSingleProduct}

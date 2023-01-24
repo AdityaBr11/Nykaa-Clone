@@ -126,11 +126,11 @@ const Makeup = () => {
                 <img src={el.image} alt="" />
                 <h2>{el.title}</h2>
                 <h3>{el.gram}</h3>
-                <div id="star"><i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star" aria-hidden="true"></i>
-                <i class="fa fa-star-o" aria-hidden="true"></i>{" "}
+                <div id="star"><i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star" aria-hidden="true"></i>
+                <i className="fa fa-star-o" aria-hidden="true"></i>{" "}
                 <h2>{el.star}</h2>
                 </div>
                 <div id="price">

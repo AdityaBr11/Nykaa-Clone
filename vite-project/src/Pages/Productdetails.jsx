@@ -5,8 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import {MdOutlineProductionQuantityLimits} from 'react-icons/md'
 import {TbTruckReturn} from 'react-icons/tb'
 import {CiLocationOn} from 'react-icons/ci'
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useToast } from "@chakra-ui/react";
 import {
   Tabs,
   TabList,
@@ -19,110 +18,21 @@ import { Collapse, Button, Image, Box } from "@chakra-ui/react";
 import { Avatar, AvatarBadge, AvatarGroup } from "@chakra-ui/react";
 import { useLocation, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { addCarts, getProducts } from "../redux/products/actions";
+import { addCarts, getCartItem, getSingleProduct } from "../redux/products/actions";
 
-const best = [
-  {
-    id: 1,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/f/5/f5af21e737534800058_1.jpg",
-    tit: "Plum Green Tea Alcohol-Free Toner",
-    quan: "200ml",
-    star: "★★★★☆ 22928",
-    price: "Rs.371",
-  },
-  {
-    id: 2,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/c/d/cd0f16c4710032517839.jpg",
-    tit: "Neutrogena Hydro Boost Water Gel",
-    quan: "2 S",
-    star: "★★★★☆ 38783",
-    price: "Rs.450",
-  },
-  {
-    id: 3,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/0/0/00244708904245709730_1.jpg",
-    tit: "Nykaa Naturals Skin Potion 24 K Gold Collagen ",
-    quan: "30ml",
-    star: "★★★★☆ 19819",
-    price: "Rs.999",
-  },
-  {
-    id: 4,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/d/d/dd126ca887167485471_1.jpg",
-    tit: "Estee Lauder Advanced Night Repair Synchronized",
-    quan: "5 S",
-    star: "★★★★☆ 15793",
-    price: "Rs.5900",
-  },
-  {
-    id: 5,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/8/a/8a541fbDOTKE00000054-1.jpg",
-    tit: "Dot & Key Vitamin c + E Super Bright Glow",
-    quan: "60 ml",
-    star: "★★★★★ 8214",
-    price: "Rs.506",
-  },
-  {
-    id: 6,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/c/d/cd9f16cNYKMCF0000008.jpg",
-    tit: "MCaffeine Choco & Shea Body Butter for Winters",
-    quan: "250g",
-    star: "★★★★★ 20874",
-    price: "Rs.549",
-  },
-  {
-    id: 7,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/2/4/24e616cNYCETA0000010.jpg",
-    tit: "Cetaphil Gentle Skin Cleanser",
-    quan: "4 S ",
-    star: "★★★★★ 56054",
-    price: "Rs.259",
-  },
-  {
-    id: 8,
-    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/f/8/f8eea7eMINIM00000001_1.jpeg",
-    tit: "Minimalist 10% Niacinamide Face Serum With Matmarine",
-    quan: "30ml",
-    star: "★★★★☆ 17718",
-    price: "Rs.599",
-  },
-];
+
 
 const Productdetails = () => {
-  
-
-
+  const toast = useToast()
   const {id}=useParams()
-  const productData=useSelector(store=>store.products)
+  const productData=useSelector(store=>store.productsReducer.singleProducts)
   const dispatch=useDispatch()
-  const cartItems=useSelector(store=>store.cart);
-  const location = useLocation()
-  const myparam=Number(location.pathname.split("/")[2]);
-  const [urlparm,setUrlparm]=useState(id)
-
-  const [currentProduct,setCurrentProduct]=useState({})
+  const cartItems=useSelector(store=>store.productsReducer.cart);
+  
   useEffect(()=>{
-    setUrlparm(myparam)
-    dispatch(getProducts())
-    const singleProduct=productData.find(iteam=>iteam.id===Number(urlparm));
-    singleProduct && setCurrentProduct(singleProduct)
-    
+    dispatch(getSingleProduct(id))
+  },[dispatch])
 
-  },[urlparm])
-  console.log(currentProduct);
-
-  const handleCart = (cartIteam) => {
-    dispatch(addCarts(cartIteam))
-    toast.success("Added to Cart", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    });
-  };
 
   const responsive = {
     superLargeDesktop: {
@@ -147,7 +57,6 @@ const Productdetails = () => {
   const handleToggle = () => setShow(!show);
   return (
     <div style={{ width: "68%", margin: "auto" }}>
-      <ToastContainer/>
       <div className="main">
         <div className="subdiv1">
           <div style={{ display: "flex", paddingRight: "0px" }}>
@@ -163,7 +72,7 @@ const Productdetails = () => {
                 width: "70%",
                 paddingLeft: "40px",
               }}
-              src={currentProduct.image}
+              src={productData.image}
             />
           </div>
         </div>
@@ -178,7 +87,7 @@ const Productdetails = () => {
                 marginBottom: "10px",
               }}
             >
-              {currentProduct.title}
+              {productData.title}
             </h1>
             <p
               style={{
@@ -192,10 +101,10 @@ const Productdetails = () => {
             </p>
             <p style={{ textAlign: "left", marginBottom: "10px" }}>
               <span style={{ color: "grey" }}>
-                MRP:{"  "} <strike> {currentProduct.preprice}</strike>
+                MRP:{"  "} <strike> {productData.preprice}</strike>
               </span>
               {"  "}
-              <span style={{ fontWeight: 600, fontSize: "20px" }}>₹{currentProduct.price}</span>
+              <span style={{ fontWeight: 600, fontSize: "20px" }}>₹{productData.price}</span>
               {"  "}
               <span
                 style={{
@@ -233,7 +142,17 @@ const Productdetails = () => {
                     justifyContent: "flext-start",
                     marginTop: "30px",
                   }}
-                  onClick={()=>handleCart({currentProduct})}
+                  onClick={()=>{dispatch(addCarts(productData))
+                    .then(() => toast({
+                      title: 'Product Added!',
+                      description: "We've added your product.",
+                      status: 'success',
+                      duration: 2000,
+                      position: "top",
+                      isClosable: true,
+                  }))
+                  dispatch(getCartItem())
+                  }}
                 >
                   Add to Bag
                 </button>
@@ -958,3 +877,71 @@ const Productdetails = () => {
 };
 
 export default Productdetails;
+
+
+const best = [
+  {
+    id: 1,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/f/5/f5af21e737534800058_1.jpg",
+    tit: "Plum Green Tea Alcohol-Free Toner",
+    quan: "200ml",
+    star: "★★★★☆ 22928",
+    price: "Rs.371",
+  },
+  {
+    id: 2,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/c/d/cd0f16c4710032517839.jpg",
+    tit: "Neutrogena Hydro Boost Water Gel",
+    quan: "2 S",
+    star: "★★★★☆ 38783",
+    price: "Rs.450",
+  },
+  {
+    id: 3,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/0/0/00244708904245709730_1.jpg",
+    tit: "Nykaa Naturals Skin Potion 24 K Gold Collagen ",
+    quan: "30ml",
+    star: "★★★★☆ 19819",
+    price: "Rs.999",
+  },
+  {
+    id: 4,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/d/d/dd126ca887167485471_1.jpg",
+    tit: "Estee Lauder Advanced Night Repair Synchronized",
+    quan: "5 S",
+    star: "★★★★☆ 15793",
+    price: "Rs.5900",
+  },
+  {
+    id: 5,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/8/a/8a541fbDOTKE00000054-1.jpg",
+    tit: "Dot & Key Vitamin c + E Super Bright Glow",
+    quan: "60 ml",
+    star: "★★★★★ 8214",
+    price: "Rs.506",
+  },
+  {
+    id: 6,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/c/d/cd9f16cNYKMCF0000008.jpg",
+    tit: "MCaffeine Choco & Shea Body Butter for Winters",
+    quan: "250g",
+    star: "★★★★★ 20874",
+    price: "Rs.549",
+  },
+  {
+    id: 7,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/2/4/24e616cNYCETA0000010.jpg",
+    tit: "Cetaphil Gentle Skin Cleanser",
+    quan: "4 S ",
+    star: "★★★★★ 56054",
+    price: "Rs.259",
+  },
+  {
+    id: 8,
+    src: "https://images-static.nykaa.com/media/catalog/product/tr:h-800,w-800,cm-pad_resize/f/8/f8eea7eMINIM00000001_1.jpeg",
+    tit: "Minimalist 10% Niacinamide Face Serum With Matmarine",
+    quan: "30ml",
+    star: "★★★★☆ 17718",
+    price: "Rs.599",
+  },
+];

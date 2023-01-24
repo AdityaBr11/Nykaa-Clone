@@ -3,6 +3,7 @@ import * as types from './actionType';
 
 const initialState={
     products:[],
+    singleProducts:[],
     cart:[],
     isLoading:false,
     isError:false,
@@ -30,6 +31,27 @@ const reducer=(oldState=initialState,action)=>{
                 isError:true,
             }
         }
+        case types.GET_SINGLE_PRODUCTS_REQUEST:{
+            return{
+                ...oldState,
+                isLoading:true
+            }
+        }
+        case types.GET_SINGLE_PRODUCTS_SUCESS:{
+            return{
+                ...oldState,
+                isLoading:false,
+                singleProducts:payload,
+            }
+        }
+        case types.GET_SINGLE_PRODUCTS_ERROR:{
+            return{
+                ...oldState,
+                isLoading:false,
+                isError:true,
+            }
+        }
+
         case types.ADD_CART_REQ:{
             return{
                 ...oldState,

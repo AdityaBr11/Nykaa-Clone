@@ -1,5 +1,5 @@
 //Varinder
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 import {Box,Heading,Text,Button,Input,InputGroup,InputLeftElement,Image,useDisclosure,Container,Center} from "@chakra-ui/react";
 import {AiOutlineMobile,AiOutlineGift,AiOutlineArrowRight} from "react-icons/ai";
 import {GoLocation,GoSearch} from "react-icons/go";
@@ -14,7 +14,7 @@ import
     DrawerContent,
 } from '@chakra-ui/react';
 import {BsArrowLeft} from "react-icons/bs";
-//import {MdOutlineShoppingBasket} from "react-icons/md";
+
 import {Link} from 'react-router-dom';
 import {useGoogleLogin} from '@react-oauth/google';
 import axios from 'axios';
@@ -45,6 +45,8 @@ import Logo from '../../public/loGo1.jpg';
 import Menus from './Menu';
 import DrawerLogin from './DrawerLogin';
 import Drawers from './DrawerNologin';
+import { getCartItem } from '../redux/products/actions';
+import { useDispatch, useSelector } from 'react-redux';
 const Navbar=() =>
 {
 
@@ -68,6 +70,17 @@ const Navbar=() =>
     const Price=249;
     const discount=30;
     const shipping=70;
+
+    //
+    const cartItem = useSelector((store) => store.productsReducer.cart);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getCartItem());
+      }, [dispatch]);
+    console.log(cartItem,"CartPage")
+
+
+
     //const totalprice=((shipping+Price)-discount);
     const offerPrice=(Price-discount);
     const {isOpen,onOpen,onClose}=useDisclosure();
@@ -122,9 +135,9 @@ const Navbar=() =>
                     <Link to="#" rel='noopener noreferrer'><Text fontWeight={{base: 650}} fontSize={{base: '11.8px',md: '14px',lg: '18px'}} _hover={{color: 'white'}} color='white' className='animate-pulse duration-75'>BEAUTY BONANZA Get Your Daily Dose Of Amazing Deals</Text></Link>
                     <Menus />
                     <Box display={'flex'}> {
-                        Nav1List.map((e) =>
+                        Nav1List.map((e,i) =>
                         {
-                            return (<Box display={{base: 'none',md: 'none',lg: 'flex'}} fontSize={{base: '10px',md: '11px',lg: '15px'}} flexDirection={{base: 'none',s: "none",md: 'row'}} alignItems={'center'} fontWeight={{base: 100,lg: 500}} _hover={{color: 'white'}} color='white' m={{base: '0px',lg: '0rem 0.9rem'}}>
+                            return (<Box key={i} display={{base: 'none',md: 'none',lg: 'flex'}} fontSize={{base: '10px',md: '11px',lg: '15px'}} flexDirection={{base: 'none',s: "none",md: 'row'}} alignItems={'center'} fontWeight={{base: 100,lg: 500}} _hover={{color: 'white'}} color='white' m={{base: '0px',lg: '0rem 0.9rem'}}>
                                 <Text fontSize={22}>{e.icon}</Text>
                                 <Text>{e.name} |</Text>
                             </Box>
@@ -438,7 +451,7 @@ const Navbar=() =>
                         )
 
                         )}
-                        {count===1?
+                        {cartItem.length===0?
 
                             <Drawers />
 

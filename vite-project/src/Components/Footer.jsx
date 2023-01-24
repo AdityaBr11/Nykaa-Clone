@@ -45,7 +45,7 @@ const Footer = () => {
             <Text as="h5" size="sm" fontWeight={"500"}>
               <i
                 style={{ fontSize: "23px" }}
-                class="fa fa-envelope"
+                className="fa fa-envelope"
                 aria-hidden="true"
               ></i>{" "}
               Get special discount on your inbox
@@ -74,7 +74,7 @@ const Footer = () => {
             <Flex alignItems={"center"} gap="10px">
                 <i
                 style={{ fontSize: "35px" }}
-                class="fa fa-mobile"
+                className="fa fa-mobile"
                 aria-hidden="true"
               ></i>{" "}
             <Text as="h5" size="sm" fontWeight={"500"}>
@@ -94,7 +94,7 @@ const Footer = () => {
             <Flex alignItems={"center"} gap="10px">
                <i
                 style={{ fontSize: "35px" }}
-                class="fa fa-phone"
+                className="fa fa-phone"
                 aria-hidden="true"
               ></i>{" "}
             <Text as="h5" size="sm" fontWeight={"500"}>
@@ -248,21 +248,21 @@ const Footer = () => {
           columns={[2, 3, 5]}
           spacing="50px">
           <Flex gap="10px">
-            <Flex  justifyContent={"center"} fontSize="30px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i class="fa fa-truck" aria-hidden="true"></i></Flex>
+            <Flex  justifyContent={"center"} fontSize="30px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i className="fa fa-truck" aria-hidden="true"></i></Flex>
             <Box>
             <Text as="h4" fontSize="md">FREE SHIPPING</Text>
             <Text as="h5" fontSize="sm">On Orders Above Rs.299</Text>
             </Box>
           </Flex>
           <Flex gap="10px">
-          <Flex  justifyContent={"center"} fontSize="25px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i class="fa fa-check-circle-o" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="25px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i className="fa fa-check-circle-o" aria-hidden="true"></i></Flex>
             <Box>
             <Text as="h4" fontSize="md">EASY RETURNS</Text>
             <Text as="h5" fontSize="sm">15-Day Return Policy</Text>
             </Box>
           </Flex>
           <Flex gap="10px">
-           <Flex  justifyContent={"center"} fontSize="20px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="55px" h={"50px"}><i class="fa fa-shirtsinbulk" aria-hidden="true"></i></Flex>
+           <Flex  justifyContent={"center"} fontSize="20px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="55px" h={"50px"}><i className="fa fa-shirtsinbulk" aria-hidden="true"></i></Flex>
             <Box>
             <Text as="h4" fontSize="md">100% AUTHENTIC</Text>
             <Text as="h5" fontSize="sm">Products Sourced Directly</Text>
@@ -270,20 +270,20 @@ const Footer = () => {
           </Flex>
           
           <Flex gap="10px">
-          <Flex  justifyContent={"center"} fontSize="20px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i class="fa fa-tag" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="20px" color={"white"} alignItems={"center"} bg={"rgb(228, 21, 152)"} borderRadius="50%" w="50px" h={"50px"}><i className="fa fa-tag" aria-hidden="true"></i></Flex>
             <Box>
             <Text as="h4" fontSize="md">1900+ BRANDS</Text>
             <Text as="h5" fontSize="sm">1.2 Lakh Products</Text>
             </Box>
           </Flex>
           <Box>
-          <Text as="h4" fontSize="sm">Show us some love <i class="fa fa-heart" aria-hidden="true"></i> on social media</Text>
+          <Text as="h4" fontSize="sm">Show us some love <i className="fa fa-heart" aria-hidden="true"></i> on social media</Text>
           <Flex gap={"20px"}>
-          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i class="fa fa-instagram" aria-hidden="true"></i></Flex>
-          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i class="fa fa-facebook" aria-hidden="true"></i></Flex>
-          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i class="fa fa-youtube-play" aria-hidden="true"></i></Flex>
-          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i class="fa fa-twitter" aria-hidden="true"></i></Flex>
-          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i class="fa fa-pinterest-p" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i className="fa fa-instagram" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i className="fa fa-facebook" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i className="fa fa-youtube-play" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i className="fa fa-twitter" aria-hidden="true"></i></Flex>
+          <Flex  justifyContent={"center"} fontSize="12px" color={"white"} alignItems={"center"} bg={"black"} borderRadius="50%" w="20px" h={"20px"}><i className="fa fa-pinterest-p" aria-hidden="true"></i></Flex>
           </Flex>
           </Box>
         </SimpleGrid>
