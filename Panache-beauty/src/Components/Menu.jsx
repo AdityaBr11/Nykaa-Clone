@@ -21,7 +21,7 @@ const Menus=({text,logout}) =>
     return (
         <Box pt={1}>
             <Menu isLazy>
-                <MenuButton display={'flex'} > &nbsp; {text}</MenuButton>
+                <MenuButton display={'flex'} justifyItems="center" > &nbsp; {text}</MenuButton>
                 <MenuList>
                     {/* MenuItems are not rendered unless Menu is open */}
                     <MenuItem><span><HiClipboardList /></span> &nbsp; Orders</MenuItem>

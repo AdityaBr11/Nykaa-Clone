@@ -1,9 +1,10 @@
 //Varinder
 import React,{useEffect, useState} from 'react'
-import {Box,Heading,Text,Button,Input,InputGroup,InputLeftElement,Image,useDisclosure,Container,Center} from "@chakra-ui/react";
+import {Box,Heading,Text,Button,Input,InputGroup,InputLeftElement,Image,useDisclosure,Container,Center, useToast} from "@chakra-ui/react";
 import {AiOutlineMobile,AiOutlineGift,AiOutlineArrowRight} from "react-icons/ai";
 import {GoLocation,GoSearch} from "react-icons/go";
 import {IoIosHelpCircleOutline} from "react-icons/io";
+import {FcGoogle} from 'react-icons/fc'
 import
 {
     Drawer,
@@ -16,7 +17,6 @@ import
 import {BsArrowLeft} from "react-icons/bs";
 
 import {Link} from 'react-router-dom';
-import {useGoogleLogin} from '@react-oauth/google';
 import axios from 'axios';
 import
 {
@@ -39,7 +39,6 @@ import
     AlertDialogContent,
     AlertDialogOverlay,
 } from '@chakra-ui/react';
-import {FcGoogle} from "react-icons/fc";
 import "../App.css";
 import Logo from '../../public/loGo1.jpg';
 import Menus from './Menu';
@@ -47,8 +46,10 @@ import DrawerLogin from './DrawerLogin';
 import Drawers from './DrawerNologin';
 import { getCartItem } from '../redux/products/actions';
 import { useDispatch, useSelector } from 'react-redux';
-const Navbar=() =>
-{
+import { googleSignup, setUser, userlogout } from '../redux/Auth/action';
+import { auth } from '../firebase/firebase';
+const Navbar=() =>{
+    const toast = useToast()
 
     const cancelRef=React.useRef()
 
@@ -71,61 +72,69 @@ const Navbar=() =>
     const discount=30;
     const shipping=70;
 
+    const { currentUser, loading, status } = useSelector((store) => store.user);
     //
     const cartItem = useSelector((store) => store.productsReducer.cart);
     const dispatch = useDispatch();
-    useEffect(() => {
+    const [nme, setNme] = useState([]);
+
+    useEffect(() =>{
         dispatch(getCartItem());
+        auth.onAuthStateChanged((authUser)=>{
+            if(authUser){
+              dispatch(setUser(authUser))
+              setNme(setUser(authUser).payload.displayName)
+              Setverfiy(true)
+            }else{
+              dispatch(setUser(null));
+              setNme("")
+              Setverfiy(false)
+            }
+          })
+            
+
       }, [dispatch]);
     console.log(cartItem,"CartPage")
 
+    // console.log(nme,"user")
 
+    // console.log(currentUser?.displayName,"curnt")
+   
+    
 
-    //const totalprice=((shipping+Price)-discount);
     const offerPrice=(Price-discount);
     const {isOpen,onOpen,onClose}=useDisclosure();
     const btnRef=React.useRef();
-    const [detial,setDetail]=useState([]);
     const [verfiy,Setverfiy]=useState(false);
-    const [count,setCount]=useState(0);
     const [price,setPrice]=useState(Price)
     const [quantity,setQuantity]=useState(1);
     const [data,setData]=useState([])
 
-    const handleClick=(e) =>
-    {
+    const handleClick=(e) =>{
         setQuantity(e.target.value)
-
     }
+
     console.log(price)
-    const login=useGoogleLogin({
-        onSuccess: async respose =>
-        {
-            try
-            {
-                const res=await axios.get("https://www.googleapis.com/oauth2/v3/userinfo",{
-                    headers: {
-                        "Authorization": `Bearer ${respose.access_token}`
-                    }
-                })
-                Setverfiy(true)
-                setDetail([...detial,res.data])
 
-            } catch(err)
-            {
-                console.log(err)
+    const googleLogin=()=>{
+        dispatch(googleSignup())
+        Setverfiy(true)
+    };
 
-            }
-
+    const logout=() =>{
+        if(currentUser){
+            dispatch(userlogout())
+            toast({
+                title: 'Login',
+                position:"top-center",
+                description: "logout successfull",
+                status: 'success',
+                duration: 3000,
+                isClosable: true,
+              })
         }
-    });
-
-    const logout=() =>
-    {
-        setDetail([]);
         Setverfiy(false)
     }
-    console.log(detial,"done")
     return (
         <Box>
 
@@ -150,12 +159,12 @@ const Navbar=() =>
 
             <Box boxShadow='rgba(0, 0, 0, 0.24) 0px 3px 8px' position={'fixed'} w='100%' top={10} bgColor={'white'} className="z-20 ">
 
-                <Box w={'80%'} h={{lg: 68,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} fontWeight={500} fontSize={'16px'}>
+                <Box w={'80%'} h={{lg: 68,md: "auto",s: "auto"}} m={'auto'} display={'flex'} justifyContent={'space-between'} className="items-center" fontWeight={500} fontSize={'16px'}>
                     <Box display={{base: 'grid',lg: 'flex'}} justifyContent={'space-evenly'} alignItems='center' gap={10} textAlign={'start'}>
                         <List spacing={1} display={{base: 'grid',md: 'flex',lg: 'flex'}} >
                             <Heading textAlign={'center'} ><Link to="/"><Image w={'83px'} src={Logo} /></Link></Heading>
 
-                            <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}}>
+                            <ListItem _hover={{color: 'white'}} textAlign={{base: "start",md: 'center',lg: 'center'}} >
 
                                 <li><Link to="/product" ><div className="d">
                                     <Button className="d-btn">Categories</Button> </div> </Link> </li> </ListItem>
@@ -383,7 +392,7 @@ const Navbar=() =>
                             </InputGroup>
                         </Box>
 
-                        {detial.length==0? <Menu>
+                        {!currentUser? <Menu>
                             <MenuButton as={Button} colorScheme='pink' fontSize={{base: 1,s: 5,md: 10}}>
                                 Sign in
                             </MenuButton>
@@ -400,7 +409,7 @@ const Navbar=() =>
                                     </MenuItem>
                                     <MenuItem>
 
-                                        <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={login}>
+                                        <Button colorScheme='white' textColor={'black'} rightIcon={<AiOutlineArrowRight />} w={'100%'} justifyContent={'space-between'} fontSize={15} onClick={googleLogin}>
                                             <FcGoogle /> Google
                                         </Button>
 
@@ -408,9 +417,9 @@ const Navbar=() =>
                                 </MenuGroup>
 
                             </MenuList>
-                        </Menu>:detial.map((e) => (
+                        </Menu>:
                             <Box>
-                                <Menus text={e.name} logout={onOpen} />
+                                <Menus text={currentUser?.displayName} logout={onOpen} />
                                 <AlertDialog
                                     isOpen={isOpen}
                                     leastDestructiveRef={cancelRef}
@@ -448,9 +457,8 @@ const Navbar=() =>
                                     </AlertDialogOverlay>
                                 </AlertDialog>
                             </Box>
-                        )
-
-                        )}
+                        
+                        }
                         {cartItem.length===0?
 
                             <Drawers />
