@@ -26,7 +26,7 @@
 
 
 
-<h3 align="center"><a href="https://superb-semifreddo-4541c0.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
+<h3 align="center"><a href="https://panachebeauty.netlify.app/"><strong>Want to see live preview »</strong></a></h3>
 <br />
 <p align="center">
   <br />&#10023;
