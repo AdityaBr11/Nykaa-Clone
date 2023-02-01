@@ -1,6 +1,7 @@
 
 <h1 align="center">Nykaa.com Clone</h1>
 <br />
+<strong>Nykaa.com Clone is ReactJS e-commerce web application that allows you to buy cosmetics products online with effortable prices. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.</strong>
 
 <h2 align="center">🖥️ Tech Stack</h2>
 
@@ -36,7 +37,7 @@
   <a href="#Contact Us">Author</a> &#10023;
 </p>
 
-Nykaa.com Clone is ReactJS e-commerce web application that allows you to buy cosmetics products online with effortable prices. It has a variety of categories, just visit the product listing page and you will see all the products, apply filters as per your need and in just a few clicks you can buy any products from the website. This project is just for educational purpose.
+
 
 ## Duration 
 We made this project within the 4 days
@@ -102,39 +103,6 @@ We made this project within the 4 days
 
 This project was built using React, Chakra UI, HTML, CSS, JavaScript, Rest API,Redux,tailwind . It is an e-commerce web application and for running on your local environment you should follow these guidelines.
 
-
-# create-vite
-## With NPM:
-
-$ npm create vite@latest
-## With Yarn:
-
-$ yarn create vite
-With PNPM:
-
-$ pnpm create vite
-Runs the app in the development mode.\
-Open [http://127.0.0.1:5173/](http://127.0.0.1:5173/) to view it in your browser.
-
-The page will reload when you make changes.\
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-npm install
-npm run dev
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-
-### Tools used on this project
-
-- Visual Studio Code
 
 <br />
 
