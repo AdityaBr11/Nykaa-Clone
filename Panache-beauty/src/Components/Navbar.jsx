@@ -68,8 +68,6 @@ const Navbar=() =>{
             icon: <IoIosHelpCircleOutline />
         }
     ]
-    const Price=249;
-    const discount=30;
     const shipping=70;
 
     const { currentUser, loading, status } = useSelector((store) => store.user);
@@ -100,21 +98,9 @@ const Navbar=() =>{
 
     // console.log(currentUser?.displayName,"curnt")
    
-    
-
-    const offerPrice=(Price-discount);
     const {isOpen,onOpen,onClose}=useDisclosure();
     const btnRef=React.useRef();
     const [verfiy,Setverfiy]=useState(false);
-    const [price,setPrice]=useState(Price)
-    const [quantity,setQuantity]=useState(1);
-    const [data,setData]=useState([])
-
-    const handleClick=(e) =>{
-        setQuantity(e.target.value)
-    }
-
-    console.log(price)
 
     const googleLogin=()=>{
         dispatch(googleSignup())
@@ -464,7 +450,7 @@ const Navbar=() =>{
                             <Drawers />
 
                             :
-                            <DrawerLogin verfiy={verfiy} handleClick={handleClick} offerPrice={offerPrice} quantity={quantity} Price={Price} price={price} discount={discount} shipping={shipping} />
+                            <DrawerLogin verfiy={verfiy} />
                         }
                     </Box>
                 </Box>

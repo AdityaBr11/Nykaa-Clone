@@ -92,6 +92,32 @@ const reducer=(oldState=initialState,action)=>{
                 isError:true,
             }
         }
+        case types.UPDATE_CART_REQUEST:
+            return {
+              ...oldState,
+              isLoading: true,
+              isError: false,
+            };
+          case types.UPDATE_CART_SUCCESS:
+            return {
+              ...oldState,
+              isLoading: false,
+              isError: false,
+              cart: oldState.cart.map((cart) => {
+                if (cart.id === payload.id) {
+                  cart.quantity = payload.quantity;
+                  return cart;
+                }
+                return cart;
+              })
+            };
+      
+          case types.UPDATE_CART_FAILURE:
+            return {
+              ...oldState,
+              isLoading: false,
+              isError: true,
+            };
         default:{
             return oldState
         }

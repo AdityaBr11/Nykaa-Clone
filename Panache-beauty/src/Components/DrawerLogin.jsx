@@ -9,32 +9,30 @@ import {
   useDisclosure,
   Box,
   Select,
+  Flex,
   Text,
   Heading,
   Center,
   Button,
   Image,
+  useToast,
 } from "@chakra-ui/react";
 import { BsArrowLeft } from "react-icons/bs";
 import { RiDeleteBin6Line, RiCoupon2Line } from "react-icons/ri";
 import { FaArrowRight } from "react-icons/fa";
 import { IoIosInformationCircleOutline } from "react-icons/io";
 import { useDispatch, useSelector } from "react-redux";
-import { deleteProducts, getCartItem } from "../redux/products/actions";
+import {
+  deleteProducts,
+  getCartItem,
+  updateProductInCart,
+} from "../redux/products/actions";
 import Drawers from "./DrawerNologin";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const DrawerLogin = ({
-  verfiy,
-  quantity,
-  handleClick,
-  Price,
-  offerPrice,
-  price,
-  discount,
-  shipping,
-}) => {
+const DrawerLogin = ({ verfiy, discount }) => {
+  const usetoast = useToast();
   const [data, setData] = useState([]);
   const cartItem = useSelector((store) => store.productsReducer.cart);
   const dispatch = useDispatch();
@@ -44,26 +42,65 @@ const DrawerLogin = ({
     dispatch(getCartItem());
   }, [dispatch]);
 
-  console.log(cartItem, "carttttttt");
+  // console.log(cartItem, "carttttttt");
   // console.log("x",totalPrice)
   const sum = cartItem.reduce((result, item) => {
-    return result + item.price;
+    return result + item.price * item.quantity;
   }, 0);
   const tp = sum;
-  console.log("total", tp);
+  // console.log("total", tp);
 
   const handleDel = (id) => {
-    dispatch(deleteProducts(id)).then(() => dispatch(getCartItem()));
-    toast.error("product deleted from cart",{
-      position:"top-center"
-    })
+    dispatch(deleteProducts(id))
+      .then(() => dispatch(getCartItem()))
+      .then(() =>
+        usetoast({
+          title: "Cart",
+          description: "Item removed from cart!",
+          status: "error",
+          duration: 2000,
+          position: "top-center",
+          isClosable: true,
+        })
+      );
+  };
+  const addQuantity = (id, quantity) => {
+    let qty = quantity + 1;
+    dispatch(updateProductInCart(id, qty))
+      .then(() => dispatch(getCartItem()))
+      .then(() =>
+        usetoast({
+          title: "Cart",
+          description: "Quantity increases",
+          status: "success",
+          duration: 2000,
+          position: "top-right",
+          isClosable: true,
+        })
+      );
+  };
+
+  const subQuantity = (id, quantity) => {
+    let qty = quantity - 1;
+    dispatch(updateProductInCart(id, qty))
+      .then(() => dispatch(getCartItem()))
+      .then(() =>
+        usetoast({
+          title: "Cart",
+          description: "Quantity decreases",
+          status: "error",
+          duration: 2000,
+          position: "top-center",
+          isClosable: true,
+        })
+      );
   };
 
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
   return (
     <>
-     <ToastContainer/>
+      <ToastContainer />
       <Button
         onClick={onOpen}
         bgColor="transparent"
@@ -81,6 +118,9 @@ const DrawerLogin = ({
             fill="black"
           ></path>
         </svg>
+        <p className="absolute right-3 top-1 rounded-xl bg-white font-bold text-pink-600">
+          {cartItem ? cartItem.length : ""}
+        </p>
       </Button>
       <Drawer
         isOpen={isOpen}
@@ -162,18 +202,36 @@ const DrawerLogin = ({
                 </Box>
                 <hr />
                 <Box display={"flex"} justifyContent={"space-between"}>
-                  <Select
-                    value={quantity}
-                    border="none"
-                    w={"140px"}
-                    onChange={handleClick}
+                  <Flex
+                    w="100px"
+                    justify={"center"}
+                    align="center"
+                    gap={1}
+                    className="text-gray-500"
                   >
-                    <option value="1">Quantity : 1</option>
-                    <option value="2">Quantity : 2</option>
-                    <option value="3">Quantity : 3</option>
-                    <option value="4">Quantity : 4</option>
-                    <option value="5">Quantity : 5</option>
-                  </Select>
+                    <Button
+                      w="50px"
+                      h="40px"
+                      variant={"ghost"}
+                      fontSize="35px"
+                      fontWeight={"bold"}
+                      disabled={e.quantity === 1}
+                      onClick={() => subQuantity(e.id, e.quantity)}
+                    >
+                      -
+                    </Button>
+                    <Text fontWeight={"bold"}>{e.quantity}</Text>
+                    <Button
+                      w="50px"
+                      h="40px"
+                      variant={"ghost"}
+                      fontSize="30px"
+                      fontWeight={"bold"}
+                      onClick={() => addQuantity(e.id, e.quantity)}
+                    >
+                      +
+                    </Button>
+                  </Flex>
                   <Box display={"flex"}>
                     <Text
                       p={"8px 8px"}
@@ -224,8 +282,8 @@ const DrawerLogin = ({
               <Text fontWeight={700}>Price Details</Text>
               <Box p={5}>
                 <Box display={"flex"} justifyContent="space-between">
-                  <Text>Bag MRP ({data.length} items)</Text>
-                  <Text>₹{tp * Number(quantity)}</Text>
+                  <Text>Bag MRP ({cartItem.length} items)</Text>
+                  <Text>₹{tp}</Text>
                 </Box>
                 <Box
                   display={"flex"}
@@ -233,9 +291,7 @@ const DrawerLogin = ({
                   m={"10px 0"}
                 >
                   <Text>Bag Dicount</Text>
-                  <Text className="line-through text-gray-500">
-                    ₹{discount * Number(quantity)}
-                  </Text>
+                  <Text className="line-through text-gray-500">5%</Text>
                 </Box>
                 <Box display={"flex"} justifyContent="space-between">
                   <Text>Shipping</Text>

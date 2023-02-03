@@ -5,7 +5,7 @@ import "react-multi-carousel/lib/styles.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import {BsChevronLeft,BsChevronRight} from 'react-icons/bs'
+import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import "../App.css";
 import {
   Accordion,
@@ -20,10 +20,8 @@ import {
 } from "@chakra-ui/react";
 import { Link, useLocation, useSearchParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getProducts,addCarts, getCartItem } from "../redux/products/actions";
+import { getProducts, addCarts, getCartItem } from "../redux/products/actions";
 import Skelton from "./Skelton";
-
-
 
 const Product = () => {
   const [SearchParams, setSearchParams] = useSearchParams();
@@ -61,22 +59,14 @@ const Product = () => {
 
   // console.log(page);
 
-
   const handleCart = (cartIteam) => {
     dispatch(addCarts(cartIteam))
-    .then(()=>
-    toast.success("Added to Cart", {
-      position: "top-center",
-      autoClose: 5000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-    }));
-    dispatch(dispatch(getCartItem()))
+      .then(() => dispatch(dispatch(getCartItem())))
+    
+      toast.success('Product Added!', {
+        position: "top-center",
+        });
   };
-
 
   useEffect(() => {
     //if the category changes then update the value in the url search params.
@@ -93,11 +83,11 @@ const Product = () => {
           _sort: SortBy && "price",
           _order: SortBy,
           _limit: 18,
-          _page:page
+          _page: page,
         },
       };
       dispatch(getProducts(getProductParam));
-      dispatch(getCartItem())
+      dispatch(getCartItem());
     }
   }, [
     products.length,
@@ -170,7 +160,7 @@ const Product = () => {
         </Carousel>
       </div>
       <h1 className="heading">All Products</h1>
-      <div id="box" >
+      <div id="box">
         <div id="chakra" className="shadow-xl">
           <div>
             <Accordion allowToggle>
@@ -192,7 +182,7 @@ const Product = () => {
 
                 <AccordionPanel pb={4} className="flex justify-between">
                   Popularity <Checkbox ml="160px" value="popul"></Checkbox>{" "}
-                </AccordionPanel >
+                </AccordionPanel>
                 <AccordionPanel pb={4} className="flex justify-between">
                   Discount <Checkbox ml="170px"></Checkbox>
                 </AccordionPanel>
@@ -549,27 +539,37 @@ const Product = () => {
           </Accordion>
         </div>
 
-        <div id="item" className="py-3 h-auto" >
+        <div id="item" className="py-3 h-auto">
           {loading ? (
             <>
-              {products.map((e,i) => (
+              {products.map((e, i) => (
                 <Skelton key={i} />
               ))}
             </>
           ) : (
             <>
               {products.map((el) => (
-                <div key={el.id} className=" shadow-xl rounded-md" >
+                <div key={el.id} className=" shadow-xl rounded-md">
                   <div className="flex text-start w-[100%] gap-3 mt-2 text-xs px-3 font-semibold">
-                    <h1 className="text-pink-600 animate-pulse duration-200">FEATURED</h1>
-                    <h1 className="text-green-600 animate-pulse duration-100">BESTSELLER</h1>
+                    <h1 className="text-pink-600 animate-pulse duration-200">
+                      FEATURED
+                    </h1>
+                    <h1 className="text-green-600 animate-pulse duration-100">
+                      BESTSELLER
+                    </h1>
                   </div>
                   <Link to={`/product/${el.id}`}>
                     <div className="overflow-hidden">
-                    <img className="w-[219px] h-[220px] px-2 py-2 hover:scale-125 duration-500" src={el.image} alt="" />
+                      <img
+                        className="w-[219px] h-[220px] px-2 py-2 hover:scale-125 duration-500"
+                        src={el.image}
+                        alt=""
+                      />
                     </div>
                   </Link>
-                  <h2 className="font-semibold text-center h-6 text-gray-500 px-2">{el.title}</h2>
+                  <h2 className="font-semibold text-center h-6 text-gray-500 px-2">
+                    {el.title}
+                  </h2>
 
                   <div id="price">
                     <h1>MRP :</h1>
@@ -587,10 +587,17 @@ const Product = () => {
                   </div>
                   <div className="w-[100%] cursor-pointer">
                     <div id="addbag" className="h-24">
-                      <div id="heart" className="bg-white shadow-sm shadow-pink-300">
+                      <div
+                        id="heart"
+                        className="bg-white shadow-sm shadow-pink-300"
+                      >
                         <i className="fa fa-heart-o" aria-hidden="true"></i>
                       </div>
-                      <div id="bag" onClick={()=>handleCart(el)} className="shadow-pink-400 shadow-sm">
+                      <div
+                        id="bag"
+                        onClick={() => handleCart(el)}
+                        className="shadow-pink-400 shadow-sm"
+                      >
                         Add to bag
                       </div>
                     </div>
@@ -602,9 +609,27 @@ const Product = () => {
         </div>
       </div>
       <div className=" w-[20%] mx-auto mt-7 mb-6 flex flex-row gap-3 ml-[50%] justify-center items-center">
-         <Button disabled={page==1} onClick={()=>setPage((pre)=>pre-1)} size="sm" colorScheme='pink' variant='outline'><BsChevronLeft/> </Button>
-         <Button size='md' disabled colorScheme='pink'>{page}</Button>
-         <Button disabled={products.length==4} onClick={()=>setPage((pre)=>pre+1)} size='sm' colorScheme='pink' variant='outline'><BsChevronRight/> </Button>
+        <Button
+          disabled={page == 1}
+          onClick={() => setPage((pre) => pre - 1)}
+          size="sm"
+          colorScheme="pink"
+          variant="outline"
+        >
+          <BsChevronLeft />{" "}
+        </Button>
+        <Button size="md" disabled colorScheme="pink">
+          {page}
+        </Button>
+        <Button
+          disabled={products.length == 4}
+          onClick={() => setPage((pre) => pre + 1)}
+          size="sm"
+          colorScheme="pink"
+          variant="outline"
+        >
+          <BsChevronRight />{" "}
+        </Button>
       </div>
     </div>
   );

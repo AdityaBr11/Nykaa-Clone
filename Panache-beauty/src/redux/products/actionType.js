@@ -17,6 +17,11 @@ export const GET_CART_REQ="GET_CART_REQ";
 export const GET_CART_SUCESS="GET_CART_SUCESS";
 export const GET_CART_ERROR="GET_CART_ERROR";
 
+//for cart page for quantity
+export const UPDATE_CART_REQUEST = 'cart/UPDATE_CART_REQUEST';
+export const UPDATE_CART_SUCCESS = 'cart/UPDATE_CART_SUCCESS';
+export const UPDATE_CART_FAILURE = 'cart/UPDATE_CART_FAILURE';
+
 //delete from cart
 export const DELETE_PRODUCT_REQUEST = "DELETE_PRODUCT_REQUEST";
 export const DELETE_PRODUCT_SUCCESS = "DELETE_PRODUCT_SUCCESS";

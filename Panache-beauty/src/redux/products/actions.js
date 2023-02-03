@@ -110,6 +110,48 @@ const getCartItem=() =>async dispatch =>{
     }
 }
 
+//for update the cart quanity
+ const updateProductInCart = (id, quantity) => async (dispatch) => {
+    dispatch({ type: types.UPDATE_CART_REQUEST });
+    return axios
+        .patch(`https://nykaa-data-base.vercel.app/cart/${id}`,{quantity:quantity})
+        .then((res) => {
+            dispatch({
+                type: types.UPDATE_CART_SUCCESS,
+                payload: {
+                    quantity,
+                    id
+                },
+            });
+
+        })
+        .catch((error) => {
+            dispatch({
+                type: types.UPDATE_CART_FAILURE,
+            });
+        })
+    // try {
+    //     dispatch({ type: types.UPDATE_CART_REQUEST });
+    //     dispatch({
+    //         type: types.UPDATE_CART_SUCCESS,
+    //         payload: {
+    //             quantity,
+    //             id
+    //         },
+    //     });
+    //     await fetch(`https://nykaa-data-base.vercel.app/cart/${id}`, {
+    //         method: "PATCH",
+    //         body: JSON.stringify({
+    //             quantity: quantity,
+    //         })
+    //     });
+    // } catch (error) {
+    //     dispatch({
+    //         type: types.UPDATE_CART_FAILURE,
+    //     });
+    // }
+};
+
 
 
 const deleteProductRequest = () => {
@@ -144,4 +186,4 @@ const deleteProducts = (id) => (dispatch) => {
 }
 
 
-export {getProducts,addCarts,getCartItem,deleteProducts,getSingleProduct}
+export {getProducts,addCarts,getCartItem,updateProductInCart,deleteProducts,getSingleProduct}

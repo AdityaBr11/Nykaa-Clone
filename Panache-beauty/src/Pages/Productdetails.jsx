@@ -143,6 +143,7 @@ const Productdetails = () => {
                     marginTop: "30px",
                   }}
                   onClick={()=>{dispatch(addCarts(productData))
+                    .then(()=>dispatch(getCartItem()))
                     .then(() => toast({
                       title: 'Product Added!',
                       description: "We've added your product.",
@@ -151,7 +152,7 @@ const Productdetails = () => {
                       position: "top",
                       isClosable: true,
                   }))
-                  dispatch(getCartItem())
+                  
                   }}
                 >
                   Add to Bag
